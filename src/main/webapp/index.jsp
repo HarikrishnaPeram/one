@@ -589,29 +589,4 @@
     </div>
 
     <header>
-        <div class="container header-inner">
-            <div style="display:flex;align-items:center;gap:18px;">
-                <button class="mobile-toggle" id="mobileToggle" aria-label="Open menu"><i class="fas fa-bars"></i></button>
-                <a class="brand" href="#">
-                    <span>Nexus<span class="accent">Shop</span></span>
-                </a>
-            </div>
-
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="#categoriesSection"><i class="fas fa-th-large"></i> Categories</a></li>
-                    <li><a href="#productsSection"><i class="fas fa-fire"></i> Trending</a></li>
-                    <li><a href="#deals"><i class="fas fa-tag"></i> Deals</a></li>
-                </ul>
-            </nav>
-
-            <div style="display:flex;align-items:center;gap:14px;">
-                <div class="search">
-                    <input type="search" id="searchInput" placeholder="Search products..." aria-label="Search products" />
-                    <button class="icon-btn" id="searchBtn" style="border:0;background:transparent;" aria-label="Search"><i class="fas fa-search"></i></button>
-                </div>
-
-                <div class="header-actions">
-                    <a class="icon-btn" title="Account" href="#"><i class="far fa-user"></i></a>
-                    <a class="icon-btn cart" href="#" id="cartBtn" title="View cart">
+        <div class="container header-inner
