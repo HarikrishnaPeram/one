@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Amazon — Online Shopping for Electronics, Fashion & More</title>
+    <title>Nehitha Services — Products, Solutions & Everyday Essentials</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,24 +12,24 @@
 
     <style>
         :root {
-            --bg: #0f1111;
-            --surface: #191e26;
-            --surface-hover: #232f3e;
-            --card: #232f3e;
-            --primary: #ff9900;
-            --primary-hover: #e68a00;
-            --primary-light: rgba(255, 153, 0, 0.15);
-            --accent-prime: #00a8e1;
-            --accent-pink: #ec4899;
-            --text: #ffffff;
-            --muted: #9ca3af;
-            --border: rgba(255, 255, 255, 0.12);
-            --border-hover: rgba(255, 255, 255, 0.3);
-            --radius-xl: 16px;
-            --radius-lg: 12px;
-            --radius-md: 8px;
-            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6);
-            --glow: 0 0 20px rgba(255, 153, 0, 0.25);
+            --bg: #0b0f17;
+            --surface: #161c28;
+            --surface-card: #1e2638;
+            --surface-hover: #273146;
+            --primary: #6366f1; /* Vibrant Indigo */
+            --primary-hover: #4f46e5;
+            --primary-light: rgba(99, 102, 241, 0.15);
+            --accent: #ec4899; /* Friendly Pink */
+            --accent-green: #10b981;
+            --text: #f8fafc;
+            --muted: #94a3b8;
+            --border: rgba(255, 255, 255, 0.08);
+            --border-hover: rgba(99, 102, 241, 0.4);
+            --radius-xl: 20px;
+            --radius-lg: 14px;
+            --radius-md: 10px;
+            --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+            --glow: 0 0 25px rgba(99, 102, 241, 0.35);
             --container: 1280px;
         }
 
@@ -45,7 +45,7 @@
             color: var(--text);
             background: var(--bg);
             -webkit-font-smoothing: antialiased;
-            line-height: 1.5;
+            line-height: 1.6;
             overflow-x: hidden;
         }
 
@@ -65,20 +65,23 @@
             padding: 0 24px;
         }
 
-        /* Top Bar */
+        /* Top Announcement Bar */
         .top-bar {
-            background: #131921;
-            color: #ccc;
+            background: linear-gradient(90deg, #4f46e5 0%, #ec4899 100%);
+            color: #ffffff;
             text-align: center;
-            padding: 8px 16px;
-            font-size: 13px;
-            font-weight: 500;
-            border-bottom: 1px solid var(--border);
+            padding: 9px 16px;
+            font-size: 13.5px;
+            font-weight: 600;
+            letter-spacing: 0.2px;
         }
 
         .top-bar span {
-            color: var(--primary);
-            font-weight: 700;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 2px 10px;
+            border-radius: 99px;
+            margin-left: 6px;
+            font-size: 12px;
         }
 
         /* Header */
@@ -86,7 +89,8 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            background: #131921;
+            background: rgba(11, 15, 23, 0.85);
+            backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--border);
         }
 
@@ -94,22 +98,31 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 20px;
-            height: 72px;
+            gap: 24px;
+            height: 76px;
         }
 
         .brand {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             font-weight: 800;
-            font-size: 26px;
-            letter-spacing: -0.03em;
+            font-size: 24px;
+            letter-spacing: -0.02em;
             color: #fff;
         }
 
-        .brand i {
-            color: var(--primary);
+        .brand-icon {
+            width: 38px;
+            height: 38px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 18px;
+            box-shadow: var(--glow);
         }
 
         .brand .accent {
@@ -121,31 +134,42 @@
             position: relative;
             display: flex;
             align-items: center;
-            background: #ffffff;
-            border-radius: var(--radius-md);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
             flex: 1;
-            max-width: 600px;
+            max-width: 540px;
             overflow: hidden;
+            transition: all 0.2s;
+        }
+
+        .search-box:focus-within {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
         }
 
         .search-box input {
             border: 0;
             background: transparent;
             outline: none;
-            padding: 10px 16px;
+            padding: 12px 18px;
             width: 100%;
             font-size: 14px;
-            color: #0f1111;
+            color: #fff;
+        }
+
+        .search-box input::placeholder {
+            color: var(--muted);
         }
 
         .search-box button {
             background: var(--primary);
             border: none;
-            padding: 0 20px;
-            height: 42px;
+            padding: 0 22px;
+            height: 46px;
             cursor: pointer;
-            color: #0f1111;
-            font-size: 16px;
+            color: #fff;
+            font-size: 15px;
             transition: background 0.2s;
         }
 
@@ -156,40 +180,40 @@
         /* Navigation Links */
         nav.main-nav ul {
             display: flex;
-            gap: 12px;
+            gap: 8px;
             list-style: none;
         }
 
         nav.main-nav li a {
             display: flex;
-            gap: 6px;
+            gap: 8px;
             align-items: center;
-            padding: 8px 12px;
+            padding: 8px 14px;
             border-radius: var(--radius-md);
-            color: #ddd;
+            color: var(--muted);
             font-weight: 600;
             font-size: 14px;
             transition: all 0.2s;
         }
 
         nav.main-nav li a:hover, nav.main-nav li a.active {
-            color: var(--primary);
-            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            background: var(--primary-light);
         }
 
         .header-right {
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 12px;
         }
 
         .icon-btn {
-            background: rgba(255, 255, 255, 0.08);
+            background: var(--surface);
             color: var(--text);
             border: 1px solid var(--border);
-            border-radius: 50%;
-            width: 42px;
-            height: 42px;
+            border-radius: 12px;
+            width: 44px;
+            height: 44px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -202,50 +226,74 @@
         .icon-btn:hover {
             background: var(--surface-hover);
             border-color: var(--primary);
+            transform: translateY(-2px);
         }
 
         .badge-count {
             position: absolute;
-            top: -4px;
-            right: -4px;
-            background: var(--primary);
-            color: #0f1111;
+            top: -5px;
+            right: -5px;
+            background: var(--accent);
+            color: #fff;
             font-size: 11px;
             font-weight: 800;
-            width: 18px;
-            height: 18px;
+            width: 20px;
+            height: 20px;
             border-radius: 50%;
             display: inline-flex;
             align-items: center;
             justify-content: center;
+            border: 2px solid var(--bg);
         }
 
         /* Hero Banner */
         .hero {
             position: relative;
-            padding: 60px 0;
-            background: linear-gradient(180deg, #1f2937 0%, var(--bg) 100%);
+            padding: 80px 0;
+            background: radial-gradient(circle at 80% 20%, rgba(99, 102, 241, 0.15) 0%, rgba(11, 15, 23, 1) 70%);
             border-bottom: 1px solid var(--border);
         }
 
         .hero-grid {
             display: grid;
             grid-template-columns: 1.1fr 0.9fr;
-            gap: 40px;
+            gap: 48px;
             align-items: center;
         }
 
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            background: var(--primary-light);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 99px;
+            color: #a5b4fc;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
         .hero h1 {
-            font-size: 46px;
+            font-size: 48px;
             font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 16px;
+            line-height: 1.15;
+            margin-bottom: 18px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, #a5b4fc 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero p {
             color: var(--muted);
-            font-size: 17px;
-            margin-bottom: 28px;
+            font-size: 18px;
+            margin-bottom: 32px;
+            max-width: 520px;
         }
 
         .btn {
@@ -253,33 +301,36 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            padding: 12px 24px;
+            padding: 14px 28px;
             border-radius: 99px;
             font-weight: 700;
-            font-size: 14px;
+            font-size: 15px;
             cursor: pointer;
             border: 0;
-            transition: all 0.2s;
+            transition: all 0.25s;
         }
 
         .btn-primary {
-            background: var(--primary);
-            color: #0f1111;
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-hover);
+            background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+            color: #fff;
             box-shadow: var(--glow);
         }
 
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(99, 102, 241, 0.5);
+        }
+
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.08);
+            background: var(--surface);
             border: 1px solid var(--border);
             color: var(--text);
         }
 
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.15);
+            background: var(--surface-hover);
+            border-color: var(--border-hover);
+            transform: translateY(-2px);
         }
 
         .hero-card {
@@ -287,157 +338,198 @@
             overflow: hidden;
             border: 1px solid var(--border);
             box-shadow: var(--shadow);
-            background: var(--surface);
+            background: var(--surface-card);
             position: relative;
+            transition: transform 0.3s;
+        }
+
+        .hero-card:hover {
+            transform: scale(1.02);
         }
 
         .hero-card img {
             width: 100%;
-            height: 340px;
+            height: 360px;
             object-fit: cover;
             display: block;
         }
 
         /* Section Layouts */
         .section {
-            padding: 60px 0;
+            padding: 70px 0;
         }
 
         .section-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
-            margin-bottom: 30px;
+            margin-bottom: 36px;
         }
 
         .section-title h2 {
-            font-size: 28px;
+            font-size: 30px;
             font-weight: 800;
+            letter-spacing: -0.01em;
         }
 
         .section-title p {
             color: var(--muted);
-            font-size: 14px;
+            font-size: 15px;
+            margin-top: 4px;
         }
 
         /* Filter Pills */
         .filter-pills {
             display: flex;
-            gap: 8px;
+            gap: 10px;
         }
 
         .pill {
             background: var(--surface);
             border: 1px solid var(--border);
             color: var(--muted);
-            padding: 6px 16px;
+            padding: 8px 18px;
             border-radius: 99px;
             font-size: 13px;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
+            transition: all 0.2s;
         }
 
         .pill.active, .pill:hover {
             background: var(--primary);
-            color: #0f1111;
+            color: #fff;
             border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
         }
 
         /* Category Grid */
         .categories-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-            gap: 16px;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
         }
 
         .cat-card {
-            background: var(--surface);
+            background: var(--surface-card);
             border: 1px solid var(--border);
             border-radius: var(--radius-lg);
-            padding: 20px;
+            padding: 24px;
             text-align: center;
             cursor: pointer;
-            transition: all 0.2s;
+            transition: all 0.25s;
         }
 
         .cat-card:hover {
             border-color: var(--primary);
-            transform: translateY(-4px);
+            background: var(--surface-hover);
+            transform: translateY(-6px);
+            box-shadow: var(--shadow);
         }
 
         .cat-icon {
-            font-size: 24px;
+            width: 52px;
+            height: 52px;
+            background: var(--primary-light);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
             color: var(--primary);
-            margin-bottom: 10px;
+            margin: 0 auto 14px;
+            transition: all 0.25s;
+        }
+
+        .cat-card:hover .cat-icon {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .cat-card h4 {
+            font-size: 15px;
+            font-weight: 700;
         }
 
         /* Products Grid */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 24px;
         }
 
         .product-card {
-            background: var(--surface);
+            background: var(--surface-card);
             border: 1px solid var(--border);
             border-radius: var(--radius-lg);
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            transition: all 0.2s;
+            transition: all 0.25s;
         }
 
         .product-card:hover {
             border-color: var(--border-hover);
-            transform: translateY(-4px);
+            transform: translateY(-6px);
             box-shadow: var(--shadow);
         }
 
         .product-img-wrapper {
             position: relative;
             height: 220px;
-            background: #fff;
-            padding: 10px;
+            background: #ffffff;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .product-card img {
-            width: 100%;
-            height: 100%;
+            max-width: 100%;
+            max-height: 100%;
             object-fit: contain;
+            transition: transform 0.3s;
         }
 
-        .prime-badge {
+        .product-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .service-badge {
             position: absolute;
-            top: 10px;
-            left: 10px;
-            background: var(--accent-prime);
+            top: 12px;
+            left: 12px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
             color: #fff;
-            font-size: 10px;
+            font-size: 11px;
             font-weight: 800;
-            padding: 2px 8px;
-            border-radius: 4px;
+            padding: 4px 10px;
+            border-radius: 99px;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         }
 
         .product-content {
-            padding: 16px;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             flex: 1;
         }
 
         .product-title {
-            font-size: 15px;
+            font-size: 16px;
             font-weight: 700;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
             color: #fff;
+            line-height: 1.4;
         }
 
         .product-rating {
-            color: var(--primary);
-            font-size: 12px;
-            margin-bottom: 12px;
+            color: #f59e0b;
+            font-size: 13px;
+            margin-bottom: 16px;
+            font-weight: 600;
         }
 
         .product-bottom {
@@ -448,38 +540,43 @@
         }
 
         .current-price {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 800;
+            color: #fff;
         }
 
         .add-cart-btn {
             background: var(--primary);
-            color: #0f1111;
+            color: #fff;
             border: none;
-            padding: 8px 14px;
+            padding: 10px 18px;
             border-radius: var(--radius-md);
             font-weight: 700;
-            font-size: 12px;
+            font-size: 13px;
             cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
         .add-cart-btn:hover {
             background: var(--primary-hover);
+            transform: scale(1.03);
         }
 
         /* Footer */
         footer {
-            background: #131921;
+            background: var(--surface);
             border-top: 1px solid var(--border);
-            padding: 40px 0 20px;
-            margin-top: 40px;
+            padding: 50px 0 30px;
+            margin-top: 60px;
         }
 
         .footer-bottom {
             text-align: center;
             color: var(--muted);
-            font-size: 13px;
-            margin-top: 20px;
+            font-size: 14px;
         }
 
         @media (max-width: 768px) {
@@ -494,25 +591,27 @@
 <body>
 
     <div class="top-bar">
-        📦 Free Express Shipping for <span>Amazon Prime</span> members.
+        ✨ Powered by <strong>Nehitha Services</strong> — Fast & Reliable Delivery <span>Nehitha Plus</span>
     </div>
 
     <header>
         <div class="container header-inner">
             <a class="brand" href="#">
-                <i class="fab fa-amazon"></i>
-                <span>amazon<span class="accent">.shop</span></span>
+                <div class="brand-icon">
+                    <i class="fas fa-layer-group"></i>
+                </div>
+                <span>Nehitha<span class="accent">.services</span></span>
             </a>
 
             <div class="search-box">
-                <input type="search" id="searchInput" placeholder="Search Amazon products..." aria-label="Search">
+                <input type="search" id="searchInput" placeholder="Search Nehitha products and services..." aria-label="Search">
                 <button aria-label="Search Submit"><i class="fas fa-search"></i></button>
             </div>
 
             <nav class="main-nav">
                 <ul>
                     <li><a href="#" class="active"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="#categoriesSection"><i class="fas fa-th-large"></i> Categories</a></li>
+                    <li><a href="#categoriesSection"><i class="fas fa-th-large"></i> Services</a></li>
                     <li><a href="#productsSection"><i class="fas fa-fire"></i> Trending</a></li>
                 </ul>
             </nav>
@@ -524,7 +623,7 @@
                 </a>
 
                 <a href="#" class="icon-btn" title="Cart">
-                    <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-shopping-bag"></i>
                     <span class="badge-count" id="cartCount">0</span>
                 </a>
             </div>
@@ -535,11 +634,14 @@
         <section class="hero">
             <div class="container hero-grid">
                 <div>
-                    <h1>Delivered Fast, Priced Everyday Low</h1>
-                    <p>Explore millions of tech gadgets, everyday essentials, and fashion items with seamless one-day delivery options.</p>
-                    <div style="display: flex; gap: 12px;">
-                        <a href="#productsSection" class="btn btn-primary">Shop Todays Deals</a>
-                        <a href="#categoriesSection" class="btn btn-secondary">Explore Categories</a>
+                    <div class="hero-badge">
+                        <i class="fas fa-sparkles"></i> Experience Premium Quality
+                    </div>
+                    <h1>Your One-Stop Shop for <span>Nehitha Services</span></h1>
+                    <p>Discover top-rated tech gadgets, daily lifestyle essentials, and trusted professional services designed around your needs.</p>
+                    <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+                        <a href="#productsSection" class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Explore Products</a>
+                        <a href="#categoriesSection" class="btn btn-secondary">Browse Services</a>
                     </div>
                 </div>
 
@@ -552,8 +654,8 @@
         <section class="section container" id="categoriesSection">
             <div class="section-header">
                 <div class="section-title">
-                    <h2>Shop by Category</h2>
-                    <p>Select a category to filter items</p>
+                    <h2>Our Service Categories</h2>
+                    <p>Choose from our wide array of offerings and solutions</p>
                 </div>
             </div>
             <div class="categories-grid" id="categoriesGrid"></div>
@@ -562,11 +664,11 @@
         <section class="section container" id="productsSection">
             <div class="section-header">
                 <div class="section-title">
-                    <h2>Featured Products</h2>
-                    <p>Top selections based on customer reviews</p>
+                    <h2>Featured Selections</h2>
+                    <p>Hand-picked items guaranteed by Nehitha Services</p>
                 </div>
                 <div class="filter-pills">
-                    <button class="pill active">All Products</button>
+                    <button class="pill active">All Items</button>
                     <button class="pill">Electronics</button>
                     <button class="pill">Accessories</button>
                 </div>
@@ -577,17 +679,17 @@
 
     <footer>
         <div class="container footer-bottom">
-            <p>&copy; 2026 Amazon Clone, Inc. or its affiliates. Built for enhanced performance and accessibility.</p>
+            <p>&copy; 2026 Nehitha Services, Inc. All rights reserved. Crafted for speed and simplicity.</p>
         </div>
     </footer>
 
     <script>
         const categories = [
             { name: "Electronics", icon: "fa-laptop" },
-            { name: "Fashion", icon: "fa-tshirt" },
-            { name: "Home & Kitchen", icon: "fa-home" },
-            { name: "Books", icon: "fa-book" },
-            { name: "Beauty", icon: "fa-magic" }
+            { name: "Fashion & Style", icon: "fa-tshirt" },
+            { name: "Home & Living", icon: "fa-home" },
+            { name: "Books & Media", icon: "fa-book" },
+            { name: "Personal Care", icon: "fa-magic" }
         ];
 
         const products = [
@@ -600,7 +702,9 @@
         // Render Categories
         document.getElementById('categoriesGrid').innerHTML = categories.map(c => `
             <div class="cat-card">
-                <i class="fas ${c.icon} cat-icon"></i>
+                <div class="cat-icon">
+                    <i class="fas ${c.icon}"></i>
+                </div>
                 <h4>${c.name}</h4>
             </div>
         `).join('');
@@ -609,7 +713,7 @@
         document.getElementById('productsGrid').innerHTML = products.map(p => `
             <div class="product-card">
                 <div class="product-img-wrapper">
-                    <span class="prime-badge">Prime</span>
+                    <span class="service-badge">Nehitha Verified</span>
                     <img src="${p.img}" alt="${p.title}">
                 </div>
                 <div class="product-content">
@@ -617,7 +721,7 @@
                     <div class="product-rating">${p.rating}</div>
                     <div class="product-bottom">
                         <span class="current-price">${p.price}</span>
-                        <button class="add-cart-btn" onclick="addToCart()">Add to Cart</button>
+                        <button class="add-cart-btn" onclick="addToCart()"><i class="fas fa-plus"></i> Add</button>
                     </div>
                 </div>
             </div>
