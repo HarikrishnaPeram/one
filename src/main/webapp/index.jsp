@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Nehitha Services — Products, Solutions & Everyday Essentials</title>
+    <title>Nehitha Eats — Superfast Food & Grocery Delivery</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,20 +16,20 @@
             --surface: #161c28;
             --surface-card: #1e2638;
             --surface-hover: #273146;
-            --primary: #6366f1; /* Vibrant Indigo */
-            --primary-hover: #4f46e5;
-            --primary-light: rgba(99, 102, 241, 0.15);
-            --accent: #ec4899; /* Friendly Pink */
+            --primary: #f97316; /* Fresh Food Orange */
+            --primary-hover: #ea580c;
+            --primary-light: rgba(249, 115, 22, 0.15);
+            --accent: #ec4899; 
             --accent-green: #10b981;
             --text: #f8fafc;
             --muted: #94a3b8;
             --border: rgba(255, 255, 255, 0.08);
-            --border-hover: rgba(99, 102, 241, 0.4);
+            --border-hover: rgba(249, 115, 22, 0.4);
             --radius-xl: 20px;
             --radius-lg: 14px;
             --radius-md: 10px;
             --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
-            --glow: 0 0 25px rgba(99, 102, 241, 0.35);
+            --glow: 0 0 25px rgba(249, 115, 22, 0.35);
             --container: 1280px;
         }
 
@@ -67,7 +67,7 @@
 
         /* Top Announcement Bar */
         .top-bar {
-            background: linear-gradient(90deg, #4f46e5 0%, #ec4899 100%);
+            background: linear-gradient(90deg, #ea580c 0%, #ec4899 100%);
             color: #ffffff;
             text-align: center;
             padding: 9px 16px;
@@ -145,7 +145,7 @@
 
         .search-box:focus-within {
             border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+            box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2);
         }
 
         .search-box input {
@@ -250,7 +250,7 @@
         .hero {
             position: relative;
             padding: 80px 0;
-            background: radial-gradient(circle at 80% 20%, rgba(99, 102, 241, 0.15) 0%, rgba(11, 15, 23, 1) 70%);
+            background: radial-gradient(circle at 80% 20%, rgba(249, 115, 22, 0.15) 0%, rgba(11, 15, 23, 1) 70%);
             border-bottom: 1px solid var(--border);
         }
 
@@ -267,9 +267,9 @@
             gap: 8px;
             padding: 6px 14px;
             background: var(--primary-light);
-            border: 1px solid rgba(99, 102, 241, 0.3);
+            border: 1px solid rgba(249, 115, 22, 0.3);
             border-radius: 99px;
-            color: #a5b4fc;
+            color: #fdba74;
             font-size: 13px;
             font-weight: 700;
             margin-bottom: 20px;
@@ -284,7 +284,7 @@
         }
 
         .hero h1 span {
-            background: linear-gradient(135deg, #a5b4fc 0%, var(--accent) 100%);
+            background: linear-gradient(135deg, #fdba74 0%, var(--accent) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -318,7 +318,7 @@
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 0 30px rgba(99, 102, 241, 0.5);
+            box-shadow: 0 0 30px rgba(249, 115, 22, 0.5);
         }
 
         .btn-secondary {
@@ -400,7 +400,7 @@
             background: var(--primary);
             color: #fff;
             border-color: var(--primary);
-            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
         }
 
         /* Category Grid */
@@ -478,16 +478,17 @@
             position: relative;
             height: 220px;
             background: #ffffff;
-            padding: 16px;
+            padding: 0;
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
         }
 
         .product-card img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             transition: transform 0.3s;
         }
 
@@ -508,6 +509,21 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            z-index: 2;
+        }
+
+        .delivery-time {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            background: rgba(11, 15, 23, 0.85);
+            backdrop-filter: blur(8px);
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 99px;
+            z-index: 2;
         }
 
         .product-content {
@@ -591,33 +607,33 @@
 <body>
 
     <div class="top-bar">
-        ✨ Powered by <strong>Nehitha Services</strong> — Fast & Reliable Delivery <span>Nehitha Plus</span>
+        ✨ Powered by <strong>Nehitha Express</strong> — Hot & Fresh Food Delivered in 30 Mins <span>Nehitha Pass</span>
     </div>
 
     <header>
         <div class="container header-inner">
             <a class="brand" href="#">
                 <div class="brand-icon">
-                    <i class="fas fa-layer-group"></i>
+                    <i class="fas fa-utensils"></i>
                 </div>
-                <span>Nehitha<span class="accent">.services</span></span>
+                <span>Nehitha<span class="accent">.eats</span></span>
             </a>
 
             <div class="search-box">
-                <input type="search" id="searchInput" placeholder="Search Nehitha products and services..." aria-label="Search">
+                <input type="search" id="searchInput" placeholder="Search dishes, cuisines, or restaurants..." aria-label="Search">
                 <button aria-label="Search Submit"><i class="fas fa-search"></i></button>
             </div>
 
             <nav class="main-nav">
                 <ul>
                     <li><a href="#" class="active"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="#categoriesSection"><i class="fas fa-th-large"></i> Services</a></li>
-                    <li><a href="#productsSection"><i class="fas fa-fire"></i> Trending</a></li>
+                    <li><a href="#categoriesSection"><i class="fas fa-list"></i> Cuisines</a></li>
+                    <li><a href="#productsSection"><i class="fas fa-fire"></i> Popular</a></li>
                 </ul>
             </nav>
 
             <div class="header-right">
-                <a href="#" class="icon-btn" title="Wishlist">
+                <a href="#" class="icon-btn" title="Favorites">
                     <i class="far fa-heart"></i>
                     <span class="badge-count" id="wishlistCount">0</span>
                 </a>
@@ -635,18 +651,18 @@
             <div class="container hero-grid">
                 <div>
                     <div class="hero-badge">
-                        <i class="fas fa-sparkles"></i> Experience Premium Quality
+                        <i class="fas fa-bolt"></i> Superfast Delivery
                     </div>
-                    <h1>Your One-Stop Shop for <span>Nehitha Services</span></h1>
-                    <p>Discover top-rated tech gadgets, daily lifestyle essentials, and trusted professional services designed around your needs.</p>
+                    <h1>Delicious Food <span>Delivered To Your Door</span></h1>
+                    <p>Satisfy your cravings with top-rated local restaurants, gourmet cloud kitchens, and fresh daily meals near you.</p>
                     <div style="display: flex; gap: 14px; flex-wrap: wrap;">
-                        <a href="#productsSection" class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Explore Products</a>
-                        <a href="#categoriesSection" class="btn btn-secondary">Browse Services</a>
+                        <a href="#productsSection" class="btn btn-primary"><i class="fas fa-hamburger"></i> Order Now</a>
+                        <a href="#categoriesSection" class="btn btn-secondary">Explore Cuisines</a>
                     </div>
                 </div>
 
                 <div class="hero-card">
-                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80" alt="Featured Product">
+                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80" alt="Delicious Burger">
                 </div>
             </div>
         </section>
@@ -654,8 +670,8 @@
         <section class="section container" id="categoriesSection">
             <div class="section-header">
                 <div class="section-title">
-                    <h2>Our Service Categories</h2>
-                    <p>Choose from our wide array of offerings and solutions</p>
+                    <h2>Explore Cuisines</h2>
+                    <p>Browse through your favorite food categories</p>
                 </div>
             </div>
             <div class="categories-grid" id="categoriesGrid"></div>
@@ -664,13 +680,14 @@
         <section class="section container" id="productsSection">
             <div class="section-header">
                 <div class="section-title">
-                    <h2>Featured Selections</h2>
-                    <p>Hand-picked items guaranteed by Nehitha Services</p>
+                    <h2>Popular Dishes</h2>
+                    <p>Hand-crafted meals prepared by top Nehitha verified chefs</p>
                 </div>
                 <div class="filter-pills">
-                    <button class="pill active">All Items</button>
-                    <button class="pill">Electronics</button>
-                    <button class="pill">Accessories</button>
+                    <button class="pill active">All Dishes</button>
+                    <button class="pill">Fast Food</button>
+                    <button class="pill">Asian</button>
+                    <button class="pill">Desserts</button>
                 </div>
             </div>
             <div class="products-grid" id="productsGrid"></div>
@@ -679,24 +696,24 @@
 
     <footer>
         <div class="container footer-bottom">
-            <p>&copy; 2026 Nehitha Services, Inc. All rights reserved. Crafted for speed and simplicity.</p>
+            <p>&copy; 2026 Nehitha Eats, Inc. All rights reserved. Delighting foodies everywhere.</p>
         </div>
     </footer>
 
     <script>
         const categories = [
-            { name: "Electronics", icon: "fa-laptop" },
-            { name: "Fashion & Style", icon: "fa-tshirt" },
-            { name: "Home & Living", icon: "fa-home" },
-            { name: "Books & Media", icon: "fa-book" },
-            { name: "Personal Care", icon: "fa-magic" }
+            { name: "Pizza & Pasta", icon: "fa-pizza-slice" },
+            { name: "Burgers & Fast Food", icon: "fa-hamburger" },
+            { name: "Biryani & Indian", icon: "fa-bowl-rice" },
+            { name: "Asian & Sushi", icon: "fa-utensils" },
+            { name: "Desserts & Bakery", icon: "fa-ice-cream" }
         ];
 
         const products = [
-            { id: 1, title: "Wireless Noise Cancelling Headphones", price: "$299.99", rating: "★★★★★ (4.8)", img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=500&q=80" },
-            { id: 2, title: "Smartwatch Series 9 - Dark Grey", price: "$399.00", rating: "★★★★☆ (4.6)", img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=500&q=80" },
-            { id: 3, title: "Ergonomic Mechanical Keyboard", price: "$129.50", rating: "★★★★★ (4.9)", img: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=500&q=80" },
-            { id: 4, title: "Ultra HD 4K Camera Lens", price: "$899.00", rating: "★★★★★ (5.0)", img: "https://images.unsplash.com/photo-1617005082133-548c4dd27f35?auto=format&fit=crop&w=500&q=80" }
+            { id: 1, title: "Artisan Pepperoni Supreme Pizza", price: "$18.99", time: "25-30 min", rating: "★★★★★ (4.9)", img: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=500&q=80" },
+            { id: 2, title: "Double Loaded Cheeseburger Meal", price: "$14.50", time: "15-20 min", rating: "★★★★☆ (4.7)", img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80" },
+            { id: 3, title: "Hyderabadi Chicken Dum Biryani", price: "$16.00", time: "20-25 min", rating: "★★★★★ (4.9)", img: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=500&q=80" },
+            { id: 4, title: "Fresh Salmon & Avocado Sushi Roll", price: "$22.00", time: "30-35 min", rating: "★★★★★ (5.0)", img: "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=500&q=80" }
         ];
 
         // Render Categories
@@ -709,11 +726,12 @@
             </div>
         `).join('');
 
-        // Render Products
+        // Render Food Items
         document.getElementById('productsGrid').innerHTML = products.map(p => `
             <div class="product-card">
                 <div class="product-img-wrapper">
-                    <span class="service-badge">Nehitha Verified</span>
+                    <span class="service-badge">Nehitha Chef</span>
+                    <span class="delivery-time"><i class="far fa-clock"></i> ${p.time}</span>
                     <img src="${p.img}" alt="${p.title}">
                 </div>
                 <div class="product-content">
