@@ -1,48 +1,32 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Nehitha Traveling Services — Book Your Ride</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nehitha Eats — Food & Grocery Delivery</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-          rel="stylesheet">
-
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-          crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
 
     <style>
-
         :root {
-            --bg: #080b12;
-            --surface: #111722;
-            --surface-card: #192130;
-            --surface-hover: #222d40;
-
-            --primary: #22c55e;
-            --primary-dark: #16a34a;
-            --primary-light: rgba(34, 197, 94, 0.14);
-
-            --blue: #3b82f6;
-            --yellow: #facc15;
-
-            --text: #f8fafc;
-            --muted: #94a3b8;
-
-            --border: rgba(255,255,255,0.08);
-
-            --radius-xl: 22px;
-            --radius-lg: 15px;
-            --radius-md: 10px;
-
-            --shadow:
-                0 20px 30px rgba(0,0,0,0.45);
-
+            --uber-black: #000000;
+            --uber-dark: #141414;
+            --uber-green: #06C167;
+            --uber-green-hover: #04A254;
+            --uber-white: #ffffff;
+            --uber-gray-50: #f6f6f6;
+            --uber-gray-100: #e8e8e8;
+            --uber-gray-200: #cccccc;
+            --uber-gray-600: #757575;
+            --uber-gray-900: #1d1d1d;
+            --radius-pill: 500px;
+            --radius-lg: 12px;
+            --radius-md: 8px;
+            --shadow-subtle: 0 4px 16px rgba(0, 0, 0, 0.06);
+            --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.12);
             --container: 1280px;
         }
 
@@ -50,17 +34,16 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-        }
-
-        html {
             scroll-behavior: smooth;
         }
 
         body {
-            font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
+            font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+            color: var(--uber-dark);
+            background: var(--uber-white);
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.5;
+            overflow-x: hidden;
         }
 
         a {
@@ -68,1706 +51,748 @@
             text-decoration: none;
         }
 
-        button,
-        input {
-            font-family: inherit;
-        }
-
         button {
-            cursor: pointer;
+            font-family: inherit;
         }
 
         .container {
             width: 100%;
             max-width: var(--container);
-            margin: auto;
+            margin: 0 auto;
             padding: 0 24px;
         }
 
-
-        /* ==============================
-           TOP BAR
-        ============================== */
-
+        /* Top Bar */
         .top-bar {
-            background: linear-gradient(
-                90deg,
-                #16a34a,
-                #22c55e
-            );
-
-            color: white;
+            background: var(--uber-black);
+            color: var(--uber-white);
             text-align: center;
-
-            padding: 9px 15px;
-
+            padding: 10px 16px;
             font-size: 13px;
-            font-weight: 700;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
+        .top-bar span {
+            background: var(--uber-green);
+            color: var(--uber-white);
+            padding: 3px 10px;
+            border-radius: var(--radius-pill);
+            margin-left: 8px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
 
-        /* ==============================
-           HEADER
-        ============================== */
-
+        /* Header */
         header {
             position: sticky;
             top: 0;
             z-index: 100;
-
-            background: rgba(8,11,18,0.9);
-
-            backdrop-filter: blur(15px);
-
-            border-bottom: 1px solid var(--border);
+            background: var(--uber-white);
+            border-bottom: 1px solid var(--uber-gray-100);
         }
 
         .header-inner {
-            height: 76px;
-
             display: flex;
             align-items: center;
             justify-content: space-between;
-
-            gap: 25px;
+            gap: 20px;
+            height: 72px;
         }
 
         .brand {
             display: flex;
             align-items: center;
-
-            gap: 10px;
-
-            font-size: 22px;
+            gap: 6px;
             font-weight: 800;
-
-            white-space: nowrap;
-        }
-
-        .brand-icon {
-            width: 40px;
-            height: 40px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 12px;
-
-            background: linear-gradient(
-                135deg,
-                var(--primary),
-                var(--primary-dark)
-            );
-
-            color: white;
-
-            box-shadow:
-                0 0 25px rgba(34,197,94,0.3);
+            font-size: 26px;
+            letter-spacing: -0.03em;
+            color: var(--uber-black);
         }
 
         .brand .accent {
-            color: var(--primary);
-        }
-
-
-        /* ==============================
-           NAVIGATION
-        ============================== */
-
-        .main-nav ul {
-            list-style: none;
-
-            display: flex;
-            gap: 5px;
-        }
-
-        .main-nav a {
-            display: flex;
-            align-items: center;
-            gap: 7px;
-
-            padding: 9px 14px;
-
-            color: var(--muted);
-
-            border-radius: 10px;
-
-            font-size: 14px;
+            color: var(--uber-green);
             font-weight: 600;
         }
 
-        .main-nav a:hover,
-        .main-nav a.active {
-            color: white;
-            background: var(--primary-light);
+        /* Location Picker Pill */
+        .location-pill {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--uber-gray-50);
+            padding: 10px 16px;
+            border-radius: var(--radius-pill);
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            border: 1px solid transparent;
         }
 
+        .location-pill:hover {
+            background: var(--uber-gray-100);
+        }
 
-        /* ==============================
-           HEADER RIGHT
-        ============================== */
+        /* Uber Search Bar */
+        .search-box {
+            position: relative;
+            display: flex;
+            align-items: center;
+            background: var(--uber-gray-50);
+            border-radius: var(--radius-pill);
+            flex: 1;
+            max-width: 480px;
+            padding: 0 16px;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+
+        .search-box:focus-within {
+            background: var(--uber-white);
+            border-color: var(--uber-black);
+            box-shadow: 0 0 0 2px var(--uber-black);
+        }
+
+        .search-box i.fa-search {
+            color: var(--uber-dark);
+            font-size: 15px;
+        }
+
+        .search-box input {
+            border: 0;
+            background: transparent;
+            outline: none;
+            padding: 12px 12px;
+            width: 100%;
+            font-size: 14px;
+            color: var(--uber-black);
+            font-weight: 500;
+        }
+
+        .search-box input::placeholder {
+            color: var(--uber-gray-600);
+        }
+
+        .search-box button {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            color: var(--uber-black);
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Navigation Links */
+        nav.main-nav ul {
+            display: flex;
+            gap: 4px;
+            list-style: none;
+        }
+
+        nav.main-nav li a {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            padding: 10px 16px;
+            border-radius: var(--radius-pill);
+            color: var(--uber-dark);
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        nav.main-nav li a:hover, nav.main-nav li a.active {
+            background: var(--uber-black);
+            color: var(--uber-white);
+        }
 
         .header-right {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
         .icon-btn {
-            width: 43px;
-            height: 43px;
-
-            border: 1px solid var(--border);
-
-            background: var(--surface);
-
-            color: white;
-
-            border-radius: 12px;
-
-            display: flex;
+            background: var(--uber-gray-50);
+            color: var(--uber-black);
+            border: none;
+            border-radius: var(--radius-pill);
+            padding: 10px 16px;
+            display: inline-flex;
             align-items: center;
-            justify-content: center;
-
-            transition: 0.2s;
+            gap: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            position: relative;
+            transition: background 0.2s;
         }
 
         .icon-btn:hover {
-            border-color: var(--primary);
-            transform: translateY(-2px);
+            background: var(--uber-gray-100);
         }
 
+        .icon-btn-cart {
+            background: var(--uber-black);
+            color: var(--uber-white);
+        }
 
-        /* ==============================
-           HERO
-        ============================== */
+        .icon-btn-cart:hover {
+            background: #333333;
+        }
 
+        .badge-count {
+            background: var(--uber-green);
+            color: var(--uber-white);
+            font-size: 11px;
+            font-weight: 800;
+            padding: 2px 7px;
+            border-radius: var(--radius-pill);
+        }
+
+        /* Hero Section */
         .hero {
-            min-height: 620px;
-
-            display: flex;
-            align-items: center;
-
-            background:
-                radial-gradient(
-                    circle at 80% 20%,
-                    rgba(34,197,94,0.15),
-                    transparent 40%
-                ),
-                radial-gradient(
-                    circle at 20% 80%,
-                    rgba(59,130,246,0.1),
-                    transparent 40%
-                );
+            background: var(--uber-gray-50);
+            padding: 56px 0;
+            border-bottom: 1px solid var(--uber-gray-100);
         }
 
         .hero-grid {
             display: grid;
-
-            grid-template-columns:
-                1fr 0.85fr;
-
-            gap: 60px;
-
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
             align-items: center;
         }
-
-
-        /* ==============================
-           HERO TEXT
-        ============================== */
 
         .hero-badge {
             display: inline-flex;
-
             align-items: center;
             gap: 8px;
-
-            padding: 7px 14px;
-
-            background: var(--primary-light);
-
-            border: 1px solid rgba(34,197,94,0.3);
-
-            color: #86efac;
-
-            border-radius: 50px;
-
+            padding: 6px 12px;
+            background: var(--uber-white);
+            border-radius: var(--radius-pill);
+            color: var(--uber-black);
             font-size: 13px;
-
             font-weight: 700;
-
             margin-bottom: 20px;
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .hero-badge i {
+            color: var(--uber-green);
         }
 
         .hero h1 {
-            font-size: 50px;
-
-            line-height: 1.1;
-
-            letter-spacing: -0.03em;
-
-            margin-bottom: 20px;
-
+            font-size: 52px;
             font-weight: 800;
-        }
-
-        .hero h1 span {
-            color: var(--primary);
+            line-height: 1.08;
+            margin-bottom: 16px;
+            letter-spacing: -0.03em;
+            color: var(--uber-black);
         }
 
         .hero p {
-            max-width: 560px;
-
-            color: var(--muted);
-
-            font-size: 17px;
-
-            margin-bottom: 30px;
+            color: var(--uber-gray-600);
+            font-size: 18px;
+            margin-bottom: 32px;
+            max-width: 480px;
+            font-weight: 400;
         }
-
-
-        /* ==============================
-           BOOKING CARD
-        ============================== */
-
-        .booking-card {
-            background: var(--surface-card);
-
-            border: 1px solid var(--border);
-
-            border-radius: var(--radius-xl);
-
-            padding: 28px;
-
-            box-shadow: var(--shadow);
-        }
-
-        .booking-card h2 {
-            font-size: 22px;
-            margin-bottom: 6px;
-        }
-
-        .booking-card > p {
-            color: var(--muted);
-            font-size: 13px;
-            margin-bottom: 22px;
-        }
-
-
-        /* ==============================
-           LOCATION INPUTS
-        ============================== */
-
-        .location-box {
-            display: flex;
-
-            gap: 12px;
-
-            margin-bottom: 16px;
-        }
-
-        .location-icon {
-            width: 38px;
-            height: 38px;
-
-            flex-shrink: 0;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 50%;
-
-            background: var(--primary-light);
-
-            color: var(--primary);
-        }
-
-        .location-input {
-            flex: 1;
-
-            position: relative;
-        }
-
-        .location-input label {
-            display: block;
-
-            color: var(--muted);
-
-            font-size: 11px;
-
-            font-weight: 700;
-
-            margin-bottom: 5px;
-        }
-
-        .location-input input {
-            width: 100%;
-
-            padding: 12px 14px;
-
-            background: var(--surface);
-
-            border: 1px solid var(--border);
-
-            border-radius: 10px;
-
-            color: white;
-
-            outline: none;
-        }
-
-        .location-input input:focus {
-            border-color: var(--primary);
-
-            box-shadow:
-                0 0 0 3px
-                rgba(34,197,94,0.1);
-        }
-
-
-        /* ==============================
-           BUTTONS
-        ============================== */
 
         .btn {
-            width: 100%;
-
-            border: none;
-
-            border-radius: 12px;
-
-            padding: 14px 20px;
-
-            font-size: 14px;
-
-            font-weight: 800;
-
-            display: flex;
-
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-
-            gap: 9px;
-
-            transition: 0.2s;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: var(--radius-pill);
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            border: 0;
+            transition: all 0.2s;
         }
 
         .btn-primary {
-            background: var(--primary);
-
-            color: #052e16;
-
-            box-shadow:
-                0 8px 25px
-                rgba(34,197,94,0.2);
+            background: var(--uber-black);
+            color: var(--uber-white);
         }
 
         .btn-primary:hover {
-            background: #4ade80;
-
-            transform: translateY(-2px);
+            background: #2a2a2a;
+            transform: translateY(-1px);
         }
 
+        .btn-secondary {
+            background: var(--uber-white);
+            border: 1px solid var(--uber-gray-200);
+            color: var(--uber-black);
+        }
 
-        /* ==============================
-           MAP
-        ============================== */
+        .btn-secondary:hover {
+            background: var(--uber-gray-50);
+            border-color: var(--uber-black);
+        }
 
-        .map-card {
-            height: 440px;
-
-            border-radius: var(--radius-xl);
-
+        .hero-card {
+            border-radius: var(--radius-lg);
             overflow: hidden;
-
+            box-shadow: var(--shadow-hover);
             position: relative;
-
-            border: 1px solid var(--border);
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #162033,
-                    #0e1725
-                );
-
-            box-shadow: var(--shadow);
+            height: 380px;
         }
 
-        .map-grid {
-            position: absolute;
-
-            inset: 0;
-
-            background-image:
-                linear-gradient(
-                    rgba(255,255,255,0.04) 1px,
-                    transparent 1px
-                ),
-                linear-gradient(
-                    90deg,
-                    rgba(255,255,255,0.04) 1px,
-                    transparent 1px
-                );
-
-            background-size: 55px 55px;
-
-            transform: rotate(-5deg) scale(1.2);
-        }
-
-        .road {
-            position: absolute;
-
-            height: 9px;
-
-            background: #35445b;
-
-            border-radius: 20px;
-        }
-
-        .road.one {
-            width: 130%;
-            top: 42%;
-            left: -15%;
-
-            transform: rotate(18deg);
-        }
-
-        .road.two {
-            width: 120%;
-            top: 62%;
-            left: -10%;
-
-            transform: rotate(-25deg);
-        }
-
-        .road.three {
-            width: 90%;
-            top: 30%;
-            left: 10%;
-
-            transform: rotate(65deg);
-        }
-
-        .map-label {
-            position: absolute;
-
-            top: 20px;
-            left: 20px;
-
-            background: rgba(8,11,18,0.8);
-
-            backdrop-filter: blur(10px);
-
-            padding: 10px 14px;
-
-            border-radius: 10px;
-
-            font-size: 13px;
-
-            font-weight: 700;
-        }
-
-
-        /* ==============================
-           MAP MARKERS
-        ============================== */
-
-        .marker {
-            position: absolute;
-
-            width: 46px;
-            height: 46px;
-
-            border-radius: 50%;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            color: white;
-
-            border: 4px solid white;
-
-            box-shadow: 0 5px 20px rgba(0,0,0,0.4);
-        }
-
-        .pickup-marker {
-            background: var(--primary);
-
-            top: 37%;
-            left: 25%;
-        }
-
-        .destination-marker {
-            background: #ef4444;
-
-            top: 58%;
-            right: 23%;
-        }
-
-        .route-line {
-            position: absolute;
-
-            width: 260px;
-
-            height: 5px;
-
-            background: var(--primary);
-
-            top: 53%;
-            left: 29%;
-
-            transform: rotate(25deg);
-
-            border-radius: 20px;
-        }
-
-
-        /* ==============================
-           DRIVER CARD
-        ============================== */
-
-        .driver-card {
-            position: absolute;
-
-            bottom: 20px;
-
-            left: 20px;
-            right: 20px;
-
-            background: rgba(17,23,34,0.94);
-
-            backdrop-filter: blur(15px);
-
-            border: 1px solid var(--border);
-
-            border-radius: 15px;
-
-            padding: 15px;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: space-between;
-        }
-
-        .driver-info {
-            display: flex;
-
-            align-items: center;
-
-            gap: 12px;
-        }
-
-        .driver-avatar {
-            width: 42px;
-            height: 42px;
-
-            border-radius: 50%;
-
-            background: var(--blue);
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .driver-info strong {
+        .hero-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             display: block;
-            font-size: 13px;
         }
 
-        .driver-info small {
-            color: var(--muted);
-            font-size: 11px;
-        }
-
-        .driver-rating {
-            color: var(--yellow);
-
-            font-size: 13px;
-
-            font-weight: 700;
-        }
-
-
-        /* ==============================
-           SECTION
-        ============================== */
-
+        /* Section Layouts */
         .section {
-            padding: 70px 0;
+            padding: 56px 0;
         }
 
-        .section-title {
-            margin-bottom: 30px;
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 28px;
         }
 
         .section-title h2 {
-            font-size: 30px;
-
+            font-size: 32px;
             font-weight: 800;
+            letter-spacing: -0.02em;
+            color: var(--uber-black);
         }
 
         .section-title p {
-            color: var(--muted);
-
-            font-size: 14px;
-
-            margin-top: 5px;
+            color: var(--uber-gray-600);
+            font-size: 15px;
+            margin-top: 4px;
         }
 
-
-        /* ==============================
-           RIDE TYPES
-        ============================== */
-
-        .ride-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(3,1fr);
-
-            gap: 20px;
-        }
-
-        .ride-card {
-            background: var(--surface-card);
-
-            border: 1px solid var(--border);
-
-            border-radius: var(--radius-lg);
-
-            padding: 22px;
-
-            transition: 0.25s;
-
-            cursor: pointer;
-        }
-
-        .ride-card:hover,
-        .ride-card.selected {
-            border-color: var(--primary);
-
-            background:
-                linear-gradient(
-                    145deg,
-                    var(--surface-card),
-                    rgba(34,197,94,0.08)
-                );
-
-            transform: translateY(-5px);
-        }
-
-        .ride-icon {
-            width: 58px;
-            height: 58px;
-
-            border-radius: 15px;
-
+        /* Filter Pills */
+        .filter-pills {
             display: flex;
+            gap: 8px;
+        }
 
+        .pill {
+            background: var(--uber-gray-50);
+            border: 1px solid transparent;
+            color: var(--uber-black);
+            padding: 10px 20px;
+            border-radius: var(--radius-pill);
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .pill.active, .pill:hover {
+            background: var(--uber-black);
+            color: var(--uber-white);
+        }
+
+        /* Category Grid */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 16px;
+        }
+
+        .cat-card {
+            background: var(--uber-gray-50);
+            border-radius: var(--radius-lg);
+            padding: 24px 16px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 2px solid transparent;
+        }
+
+        .cat-card:hover {
+            background: var(--uber-white);
+            border-color: var(--uber-black);
+            box-shadow: var(--shadow-subtle);
+            transform: translateY(-2px);
+        }
+
+        .cat-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--uber-white);
+            border-radius: 50%;
+            display: flex;
             align-items: center;
             justify-content: center;
-
-            background: var(--primary-light);
-
-            color: var(--primary);
-
-            font-size: 25px;
-
-            margin-bottom: 15px;
+            font-size: 22px;
+            color: var(--uber-black);
+            margin: 0 auto 12px;
+            box-shadow: var(--shadow-subtle);
+            transition: all 0.2s;
         }
 
-        .ride-card h3 {
-            font-size: 17px;
-
-            margin-bottom: 5px;
+        .cat-card:hover .cat-icon {
+            background: var(--uber-green);
+            color: var(--uber-white);
         }
 
-        .ride-card p {
-            color: var(--muted);
-
-            font-size: 12px;
-
-            margin-bottom: 14px;
+        .cat-card h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--uber-black);
         }
 
-        .ride-bottom {
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-        }
-
-        .ride-price {
-            font-size: 18px;
-
-            font-weight: 800;
-        }
-
-        .ride-time {
-            color: var(--muted);
-
-            font-size: 12px;
-        }
-
-
-        /* ==============================
-           RECENT RIDES
-        ============================== */
-
-        .recent-rides {
+        /* Uber Eats Style Product Grid */
+        .products-grid {
             display: grid;
-
-            grid-template-columns:
-                repeat(2,1fr);
-
-            gap: 15px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 28px;
         }
 
-        .recent-card {
-            background: var(--surface-card);
-
-            border: 1px solid var(--border);
-
-            border-radius: 14px;
-
-            padding: 18px;
-
+        .product-card {
+            background: var(--uber-white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
             display: flex;
-
-            align-items: center;
-
-            justify-content: space-between;
-        }
-
-        .recent-route {
-            display: flex;
-
-            align-items: center;
-
-            gap: 12px;
-        }
-
-        .route-icons {
-            display: flex;
-
             flex-direction: column;
-
-            align-items: center;
-
-            gap: 4px;
-
-            color: var(--primary);
+            cursor: pointer;
+            transition: all 0.2s ease;
         }
 
-        .route-icons .line {
-            height: 20px;
-
-            border-left:
-                2px dashed
-                var(--muted);
+        .product-card:hover {
+            transform: translateY(-4px);
         }
 
-        .recent-route strong {
-            display: block;
-
-            font-size: 13px;
+        .product-img-wrapper {
+            position: relative;
+            height: 200px;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            background: var(--uber-gray-100);
         }
 
-        .recent-route span {
-            color: var(--muted);
+        .product-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
 
+        .product-card:hover img {
+            transform: scale(1.04);
+        }
+
+        .service-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--uber-black);
+            color: var(--uber-white);
             font-size: 11px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: var(--radius-pill);
+            letter-spacing: 0.3px;
+            z-index: 2;
         }
 
-
-        /* ==============================
-           FOOTER
-        ============================== */
-
-        footer {
-            background: var(--surface);
-
-            border-top: 1px solid var(--border);
-
-            padding: 45px 0;
+        .favorite-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: var(--uber-white);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: var(--uber-black);
+            box-shadow: var(--shadow-subtle);
+            border: none;
+            cursor: pointer;
+            z-index: 2;
+            transition: transform 0.2s;
         }
 
-        .footer-content {
-            text-align: center;
+        .favorite-btn:hover {
+            transform: scale(1.1);
+        }
 
-            color: var(--muted);
+        .product-content {
+            padding: 14px 4px 0;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
 
+        .product-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 8px;
+            margin-bottom: 4px;
+        }
+
+        .product-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--uber-black);
+            line-height: 1.3;
+        }
+
+        .product-rating {
+            background: var(--uber-gray-50);
+            color: var(--uber-black);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: var(--radius-pill);
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            white-space: nowrap;
+        }
+
+        .product-meta {
+            color: var(--uber-gray-600);
             font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .product-bottom {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 8px;
+        }
+
+        .current-price {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--uber-black);
+        }
+
+        .add-cart-btn {
+            background: var(--uber-black);
+            color: var(--uber-white);
+            border: none;
+            padding: 8px 18px;
+            border-radius: var(--radius-pill);
+            font-weight: 700;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .add-cart-btn:hover {
+            background: var(--uber-green);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--uber-black);
+            color: var(--uber-white);
+            padding: 60px 0 40px;
+            margin-top: 80px;
         }
 
         .footer-brand {
-            color: white;
-
-            font-size: 18px;
-
+            font-size: 28px;
             font-weight: 800;
-
-            margin-bottom: 8px;
+            margin-bottom: 24px;
         }
 
         .footer-brand span {
-            color: var(--primary);
+            color: var(--uber-green);
         }
 
-
-        /* ==============================
-           TOAST
-        ============================== */
-
-        .toast {
-            position: fixed;
-
-            bottom: 25px;
-            right: 25px;
-
-            background: #16a34a;
-
-            color: white;
-
-            padding: 15px 20px;
-
-            border-radius: 12px;
-
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 24px;
+            text-align: center;
+            color: var(--uber-gray-200);
             font-size: 13px;
-
-            font-weight: 700;
-
-            box-shadow: var(--shadow);
-
-            transform:
-                translateY(100px);
-
-            opacity: 0;
-
-            transition: 0.3s;
-
-            z-index: 999;
         }
 
-        .toast.show {
-            transform: translateY(0);
-
-            opacity: 1;
+        @media (max-width: 900px) {
+            .hero-grid { grid-template-columns: 1fr; }
+            .hero-card { display: none; }
+            .location-pill { display: none; }
+            nav.main-nav { display: none; }
         }
-
-
-        /* ==============================
-           MOBILE
-        ============================== */
-
-        @media(max-width:900px) {
-
-            .hero-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .map-card {
-                height: 380px;
-            }
-
-            .hero h1 {
-                font-size: 40px;
-            }
-
-            .ride-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .recent-rides {
-                grid-template-columns: 1fr;
-            }
-
-            .main-nav {
-                display: none;
-            }
-        }
-
-        @media(max-width:600px) {
-
-            .header-inner {
-                height: 65px;
-            }
-
-            .brand {
-                font-size: 17px;
-            }
-
-            .brand-icon {
-                width: 34px;
-                height: 34px;
-            }
-
-            .header-right {
-                display: none;
-            }
-
-            .hero {
-                padding: 50px 0;
-            }
-
-            .hero h1 {
-                font-size: 34px;
-            }
-
-            .hero p {
-                font-size: 15px;
-            }
-
-            .booking-card {
-                padding: 20px;
-            }
-
-            .map-card {
-                display: none;
-            }
-        }
-
     </style>
 </head>
 
-
 <body>
 
-
-<!-- TOP BAR -->
-
-<div class="top-bar">
-    🚕 Nehitha Traveling Services — Safe, Fast & Reliable Rides
-</div>
-
-
-<!-- HEADER -->
-
-<header>
-
-    <div class="container header-inner">
-
-        <a class="brand" href="#">
-
-            <div class="brand-icon">
-                <i class="fas fa-car"></i>
-            </div>
-
-            <span>
-                Nehitha
-                <span class="accent">Traveling</span>
-            </span>
-
-        </a>
-
-
-        <nav class="main-nav">
-
-            <ul>
-
-                <li>
-                    <a href="#" class="active">
-                        <i class="fas fa-home"></i>
-                        Home
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#rides">
-                        <i class="fas fa-car-side"></i>
-                        Rides
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#recent">
-                        <i class="fas fa-history"></i>
-                        My Rides
-                    </a>
-                </li>
-
-            </ul>
-
-        </nav>
-
-
-        <div class="header-right">
-
-            <button class="icon-btn">
-                <i class="fas fa-bell"></i>
-            </button>
-
-            <button class="icon-btn">
-                <i class="fas fa-user"></i>
-            </button>
-
-        </div>
-
+    <div class="top-bar">
+        ⚡ Order with <strong>Nehitha Pass</strong> for $0 Delivery Fee & 5% off <span>Uber Eats Style</span>
     </div>
 
-</header>
+    <header>
+        <div class="container header-inner">
+            <a class="brand" href="#">
+                <span>Nehitha<span class="accent">Eats</span></span>
+            </a>
 
-
-
-<!-- HERO -->
-
-<section class="hero">
-
-    <div class="container hero-grid">
-
-
-        <!-- LEFT -->
-
-        <div>
-
-            <div class="hero-badge">
-
-                <i class="fas fa-shield-halved"></i>
-
-                Safe & Trusted Travel
-
+            <div class="location-pill">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Deliver now • San Francisco</span>
+                <i class="fas fa-chevron-down" style="font-size: 11px;"></i>
             </div>
 
-
-            <h1>
-
-                Your Ride,
-
-                <span>Your Way.</span>
-
-            </h1>
-
-
-            <p>
-
-                Book a comfortable and reliable ride with
-                Nehitha Traveling Services. Choose your vehicle,
-                enter your destination and travel safely.
-
-            </p>
-
-
-            <!-- BOOKING CARD -->
-
-            <div class="booking-card">
-
-                <h2>
-                    Book a Ride
-                </h2>
-
-                <p>
-                    Enter your pickup and destination
-                </p>
-
-
-                <!-- PICKUP -->
-
-                <div class="location-box">
-
-                    <div class="location-icon">
-
-                        <i class="fas fa-location-dot"></i>
-
-                    </div>
-
-                    <div class="location-input">
-
-                        <label>
-                            PICKUP LOCATION
-                        </label>
-
-                        <input
-                            id="pickup"
-                            type="text"
-                            placeholder="Enter pickup location"
-                        >
-
-                    </div>
-
-                </div>
-
-
-                <!-- DESTINATION -->
-
-                <div class="location-box">
-
-                    <div class="location-icon"
-                         style="
-                         background:rgba(239,68,68,0.12);
-                         color:#ef4444;
-                         ">
-
-                        <i class="fas fa-location-dot"></i>
-
-                    </div>
-
-                    <div class="location-input">
-
-                        <label>
-                            DESTINATION
-                        </label>
-
-                        <input
-                            id="destination"
-                            type="text"
-                            placeholder="Where are you going?"
-                        >
-
-                    </div>
-
-                </div>
-
-
-                <button
-                    class="btn btn-primary"
-                    onclick="searchRide()">
-
-                    <i class="fas fa-search"></i>
-
-                    Find a Ride
-
-                </button>
-
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="search" id="searchInput" placeholder="Search food, groceries, drinks..." aria-label="Search">
             </div>
 
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" class="active"><i class="fas fa-utensils"></i> Delivery</a></li>
+                    <li><a href="#categoriesSection"><i class="fas fa-shopping-bag"></i> Pickup</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-right">
+                <a href="#" class="icon-btn" title="Favorites">
+                    <i class="far fa-heart"></i>
+                    <span id="wishlistCount">0</span>
+                </a>
+
+                <a href="#" class="icon-btn icon-btn-cart" title="Cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="badge-count" id="cartCount">0</span>
+                </a>
+            </div>
         </div>
+    </header>
 
-
-
-        <!-- MAP -->
-
-        <div class="map-card">
-
-            <div class="map-grid"></div>
-
-            <div class="road one"></div>
-
-            <div class="road two"></div>
-
-            <div class="road three"></div>
-
-
-            <div class="map-label">
-
-                <i class="fas fa-location-dot"
-                   style="color:#22c55e"></i>
-
-                Nearby drivers
-
-            </div>
-
-
-            <div class="route-line"></div>
-
-
-            <!-- PICKUP MARKER -->
-
-            <div class="marker pickup-marker">
-
-                <i class="fas fa-location-dot"></i>
-
-            </div>
-
-
-            <!-- DESTINATION MARKER -->
-
-            <div class="marker destination-marker">
-
-                <i class="fas fa-flag-checkered"></i>
-
-            </div>
-
-
-            <!-- DRIVER -->
-
-            <div class="driver-card">
-
-                <div class="driver-info">
-
-                    <div class="driver-avatar">
-
-                        <i class="fas fa-user"></i>
-
+    <main>
+        <section class="hero">
+            <div class="container hero-grid">
+                <div>
+                    <div class="hero-badge">
+                        <i class="fas fa-bolt"></i> Fast 25-min delivery
                     </div>
-
-                    <div>
-
-                        <strong>
-                            Driver nearby
-                        </strong>
-
-                        <small>
-                            Toyota • 2 min away
-                        </small>
-
+                    <h1>Order food you love, delivered fast</h1>
+                    <p>Order from your favorite local restaurants and top gourmet chefs in just a few taps.</p>
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                        <a href="#productsSection" class="btn btn-primary"><i class="fas fa-utensils"></i> Find Food</a>
+                        <a href="#categoriesSection" class="btn btn-secondary">Explore Categories</a>
                     </div>
-
                 </div>
 
-
-                <div class="driver-rating">
-
-                    ★ 4.9
-
+                <div class="hero-card">
+                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80" alt="Uber Eats Gourmet Burger">
                 </div>
-
             </div>
+        </section>
 
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- RIDE TYPES -->
-
-<section class="section" id="rides">
-
-    <div class="container">
-
-        <div class="section-title">
-
-            <h2>
-                Choose Your Ride
-            </h2>
-
-            <p>
-                Select the vehicle that suits your journey
-            </p>
-
-        </div>
-
-
-        <div class="ride-grid">
-
-
-            <!-- MINI -->
-
-            <div
-                class="ride-card selected"
-                onclick="selectRide(this,'Mini',150)"
-            >
-
-                <div class="ride-icon">
-
-                    <i class="fas fa-car"></i>
-
+        <section class="section container" id="categoriesSection">
+            <div class="section-header">
+                <div class="section-title">
+                    <h2>Explore Categories</h2>
+                    <p>Browse top cuisines around you</p>
                 </div>
-
-                <h3>
-                    Nehitha Mini
-                </h3>
-
-                <p>
-                    Affordable ride for everyday travel
-                </p>
-
-                <div class="ride-bottom">
-
-                    <span class="ride-price">
-                        ₹150
-                    </span>
-
-                    <span class="ride-time">
-                        2-3 min
-                    </span>
-
-                </div>
-
             </div>
+            <div class="categories-grid" id="categoriesGrid"></div>
+        </section>
 
-
-            <!-- SEDAN -->
-
-            <div
-                class="ride-card"
-                onclick="selectRide(this,'Sedan',250)"
-            >
-
-                <div class="ride-icon">
-
-                    <i class="fas fa-car-side"></i>
-
+        <section class="section container" id="productsSection">
+            <div class="section-header">
+                <div class="section-title">
+                    <h2>Popular Near You</h2>
+                    <p>Top dishes with high ratings and fast delivery</p>
                 </div>
-
-                <h3>
-                    Nehitha Sedan
-                </h3>
-
-                <p>
-                    Comfortable ride with extra space
-                </p>
-
-                <div class="ride-bottom">
-
-                    <span class="ride-price">
-                        ₹250
-                    </span>
-
-                    <span class="ride-time">
-                        4-5 min
-                    </span>
-
+                <div class="filter-pills">
+                    <button class="pill active">All</button>
+                    <button class="pill">Fast Food</button>
+                    <button class="pill">Asian</button>
+                    <button class="pill">Desserts</button>
                 </div>
-
             </div>
+            <div class="products-grid" id="productsGrid"></div>
+        </section>
+    </main>
 
-
-            <!-- SUV -->
-
-            <div
-                class="ride-card"
-                onclick="selectRide(this,'SUV',400)"
-            >
-
-                <div class="ride-icon">
-
-                    <i class="fas fa-truck"></i>
-
-                </div>
-
-                <h3>
-                    Nehitha SUV
-                </h3>
-
-                <p>
-                    Spacious vehicle for groups
-                </p>
-
-                <div class="ride-bottom">
-
-                    <span class="ride-price">
-                        ₹400
-                    </span>
-
-                    <span class="ride-time">
-                        5-7 min
-                    </span>
-
-                </div>
-
+    <footer>
+        <div class="container">
+            <div class="footer-brand">Nehitha<span>Eats</span></div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Nehitha Eats, Inc. Powered by Uber design system architecture.</p>
             </div>
-
         </div>
+    </footer>
 
-    </div>
+    <script>
+        const categories = [
+            { name: "Pizza & Pasta", icon: "fa-pizza-slice" },
+            { name: "Burgers & Fast Food", icon: "fa-hamburger" },
+            { name: "Biryani & Indian", icon: "fa-bowl-rice" },
+            { name: "Asian & Sushi", icon: "fa-utensils" },
+            { name: "Desserts & Bakery", icon: "fa-ice-cream" }
+        ];
 
-</section>
+        const products = [
+            { id: 1, title: "Artisan Pepperoni Supreme Pizza", price: "$18.99", time: "25-30 min", rating: "4.9 ★", img: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=500&q=80" },
+            { id: 2, title: "Double Loaded Cheeseburger Meal", price: "$14.50", time: "15-20 min", rating: "4.7 ★", img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80" },
+            { id: 3, title: "Hyderabadi Chicken Dum Biryani", price: "$16.00", time: "20-25 min", rating: "4.9 ★", img: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=500&q=80" },
+            { id: 4, title: "Fresh Salmon & Avocado Sushi Roll", price: "$22.00", time: "30-35 min", rating: "5.0 ★", img: "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=500&q=80" }
+        ];
 
+        // Render Categories
+        document.getElementById('categoriesGrid').innerHTML = categories.map(c => `
+            <div class="cat-card">
+                <div class="cat-icon">
+                    <i class="fas ${c.icon}"></i>
+                </div>
+                <h4>${c.name}</h4>
+            </div>
+        `).join('');
 
-
-<!-- RECENT RIDES -->
-
-<section class="section" id="recent">
-
-    <div class="container">
-
-        <div class="section-title">
-
-            <h2>
-                Recent Rides
-            </h2>
-
-            <p>
-                Your previous Nehitha Traveling trips
-            </p>
-
-        </div>
-
-
-        <div class="recent-rides">
-
-
-            <div class="recent-card">
-
-                <div class="recent-route">
-
-                    <div class="route-icons">
-
-                        <i class="fas fa-circle"
-                           style="font-size:8px"></i>
-
-                        <div class="line"></div>
-
-                        <i class="fas fa-location-dot"></i>
-
+        // Render Food Items in Uber Eats Layout
+        document.getElementById('productsGrid').innerHTML = products.map(p => `
+            <div class="product-card">
+                <div class="product-img-wrapper">
+                    <span class="service-badge">Uber Select</span>
+                    <button class="favorite-btn" aria-label="Favorite"><i class="far fa-heart"></i></button>
+                    <img src="${p.img}" alt="${p.title}">
+                </div>
+                <div class="product-content">
+                    <div class="product-header-row">
+                        <div class="product-title">${p.title}</div>
+                        <div class="product-rating">${p.rating}</div>
                     </div>
-
-                    <div>
-
-                        <strong>
-                            Chennai Central
-                        </strong>
-
-                        <span>
-                            → T. Nagar
-                        </span>
-
+                    <div class="product-meta">${p.time} • $0.99 Delivery Fee</div>
+                    <div class="product-bottom">
+                        <span class="current-price">${p.price}</span>
+                        <button class="add-cart-btn" onclick="addToCart()"><i class="fas fa-plus"></i> Add</button>
                     </div>
-
                 </div>
-
-                <strong>
-                    ₹220
-                </strong>
-
             </div>
-
-
-
-            <div class="recent-card">
-
-                <div class="recent-route">
-
-                    <div class="route-icons">
-
-                        <i class="fas fa-circle"
-                           style="font-size:8px"></i>
-
-                        <div class="line"></div>
-
-                        <i class="fas fa-location-dot"></i>
-
-                    </div>
-
-                    <div>
-
-                        <strong>
-                            Airport
-                        </strong>
-
-                        <span>
-                            → Anna Nagar
-                        </span>
-
-                    </div>
-
-                </div>
-
-                <strong>
-                    ₹380
-                </strong>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- FOOTER -->
-
-<footer>
-
-    <div class="container footer-content">
-
-        <div class="footer-brand">
-
-            Nehitha
-            <span>Traveling Services</span>
-
-        </div>
-
-        <p>
-
-            Safe rides. Happy journeys.
-
-        </p>
-
-        <p style="margin-top:10px">
-
-            © 2026 Nehitha Traveling Services.
-            All rights reserved.
-
-        </p>
-
-    </div>
-
-</footer>
-
-
-
-<!-- TOAST -->
-
-<div class="toast" id="toast">
-
-    <i class="fas fa-check-circle"></i>
-
-    Ride booked successfully!
-
-</div>
-
-
-
-<script>
-
-
-/* ============================
-   SELECTED RIDE
-============================ */
-
-let selectedRide = "Mini";
-
-let selectedPrice = 150;
-
-
-function selectRide(card, ride, price) {
-
-    document
-        .querySelectorAll(".ride-card")
-        .forEach(item => {
-
-            item.classList.remove("selected");
-
-        });
-
-
-    card.classList.add("selected");
-
-
-    selectedRide = ride;
-
-    selectedPrice = price;
-
-}
-
-
-/* ============================
-   FIND RIDE
-============================ */
-
-function searchRide() {
-
-    const pickup =
-        document.getElementById("pickup").value;
-
-    const destination =
-        document.getElementById("destination").value;
-
-
-    if (!pickup || !destination) {
-
-        showToast(
-            "Please enter pickup and destination"
-        );
-
-        return;
-    }
-
-
-    showToast(
-        "Finding nearby " +
-        selectedRide +
-        " rides..."
-    );
-
-}
-
-
-/* ============================
-   BOOK RIDE
-============================ */
-
-function bookRide() {
-
-    const pickup =
-        document.getElementById("pickup").value;
-
-    const destination =
-        document.getElementById("destination").value;
-
-
-    if (!pickup || !destination) {
-
-        showToast(
-            "Please enter your locations first"
-        );
-
-        return;
-    }
-
-
-    showToast(
-        "Your " +
-        selectedRide +
-        " ride is booked!"
-    );
-
-}
-
-
-/* ============================
-   TOAST
-============================ */
-
-function showToast(message) {
-
-    const toast =
-        document.getElementById("toast");
-
-    toast.innerHTML =
-        '<i class="fas fa-check-circle"></i> ' +
-        message;
-
-    toast.classList.add("show");
-
-
-    setTimeout(() => {
-
-        toast.classList.remove("show");
-
-    }, 3000);
-
-}
-
-
-/* ============================
-   ADD BOOK BUTTON
-============================ */
-
-const bookingCard =
-    document.querySelector(".booking-card");
-
-
-const bookButton =
-    document.createElement("button");
-
-
-bookButton.className =
-    "btn btn-primary";
-
-bookButton.style.marginTop =
-    "10px";
-
-bookButton.innerHTML =
-    '<i class="fas fa-car"></i> Book Ride';
-
-
-bookButton.onclick =
-    bookRide;
-
-
-bookingCard.appendChild(
-    bookButton
-);
-
-</script>
-
-
+        `).join('');
+
+        let cartCount = 0;
+        function addToCart() {
+            cartCount++;
+            document.getElementById('cartCount').innerText = cartCount;
+        }
+    </script>
 </body>
 </html>
