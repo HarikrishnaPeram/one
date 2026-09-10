@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Nehitha — Bike & Auto Rides</title>
+    <title>Nehith — Food Delivery & More</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,20 +12,20 @@
 
     <style>
         :root {
-            --rapido-yellow: #FFD500;
-            --rapido-yellow-hover: #F2C700;
-            --rapido-dark: #1A1A1A;
-            --rapido-light: #F9F9F9;
-            --rapido-white: #FFFFFF;
-            --rapido-gray-100: #EFEFEF;
-            --rapido-gray-500: #717171;
-            --rapido-gray-900: #111111;
+            --swiggy-orange: #FC8019;
+            --swiggy-orange-hover: #E8710D;
+            --swiggy-dark: #282C3F;
+            --swiggy-light: #F4F5F7;
+            --swiggy-white: #FFFFFF;
+            --swiggy-gray-100: #E9E9EB;
+            --swiggy-gray-500: #686B78;
+            --swiggy-gray-900: #1C1C1C;
             --radius-pill: 9999px;
             --radius-lg: 16px;
-            --radius-md: 10px;
-            --shadow-card: 0 6px 20px rgba(0, 0, 0, 0.06);
-            --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.12);
-            --container: 1280px;
+            --radius-md: 12px;
+            --shadow-card: 0 4px 15px rgba(40, 44, 63, 0.08);
+            --shadow-hover: 0 8px 25px rgba(40, 44, 63, 0.15);
+            --container: 1200px;
         }
 
         * {
@@ -37,8 +37,8 @@
 
         body {
             font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-            color: var(--rapido-gray-900);
-            background: var(--rapido-light);
+            color: var(--swiggy-dark);
+            background: var(--swiggy-white);
             -webkit-font-smoothing: antialiased;
             line-height: 1.6;
             overflow-x: hidden;
@@ -57,26 +57,24 @@
             width: 100%;
             max-width: var(--container);
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 20px;
         }
 
         /* Top Announcement Bar */
         .top-bar {
-            background: var(--rapido-dark);
-            color: var(--rapido-yellow);
+            background: linear-gradient(135deg, var(--swiggy-orange), #FF5200);
+            color: var(--swiggy-white);
             text-align: center;
             padding: 10px 16px;
             font-size: 13px;
             font-weight: 700;
-            letter-spacing: -0.01em;
         }
 
         .top-bar span {
-            background: rgba(255, 213, 0, 0.15);
+            background: rgba(255, 255, 255, 0.25);
             padding: 2px 10px;
             border-radius: var(--radius-pill);
             margin-left: 6px;
-            color: var(--rapido-white);
         }
 
         /* Header */
@@ -84,9 +82,8 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--rapido-gray-100);
+            background: var(--swiggy-white);
+            box-shadow: 0 15px 40px -20px rgba(40, 44, 63, 0.1);
         }
 
         .header-inner {
@@ -100,19 +97,23 @@
         .brand {
             display: flex;
             align-items: center;
-            gap: 4px;
+            gap: 8px;
             font-weight: 800;
-            font-size: 26px;
-            letter-spacing: -0.04em;
-            color: var(--rapido-gray-900);
+            font-size: 28px;
+            letter-spacing: -0.03em;
+            color: var(--swiggy-dark);
         }
 
-        .brand .badge-brand {
-            background: var(--rapido-yellow);
-            color: var(--rapido-gray-900);
-            padding: 2px 10px;
-            border-radius: 8px;
-            font-size: 22px;
+        .brand-logo {
+            background: var(--swiggy-orange);
+            color: var(--swiggy-white);
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
         }
 
         /* Location Picker */
@@ -120,42 +121,47 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            background: #FFF9D6;
-            padding: 10px 18px;
+            background: var(--swiggy-light);
+            padding: 10px 16px;
             border-radius: var(--radius-pill);
             font-size: 14px;
-            font-weight: 700;
+            font-weight: 600;
             cursor: pointer;
             transition: all 0.2s;
-            border: 1px solid rgba(255, 213, 0, 0.4);
+            border: 1px solid var(--swiggy-gray-100);
+        }
+
+        .location-pill:hover {
+            border-color: var(--swiggy-orange);
         }
 
         .location-pill i {
-            color: #D4AF37;
+            color: var(--swiggy-orange);
         }
 
         /* Nav */
         nav.main-nav ul {
             display: flex;
-            gap: 6px;
+            gap: 16px;
             list-style: none;
+            align-items: center;
         }
 
         nav.main-nav li a {
             display: flex;
             gap: 8px;
             align-items: center;
-            padding: 10px 18px;
+            padding: 8px 14px;
             border-radius: var(--radius-pill);
-            color: var(--rapido-gray-900);
+            color: var(--swiggy-dark);
             font-weight: 600;
             font-size: 14px;
             transition: all 0.2s;
         }
 
         nav.main-nav li a:hover, nav.main-nav li a.active {
-            background: var(--rapido-yellow);
-            color: var(--rapido-gray-900);
+            color: var(--swiggy-orange);
+            background: #FFF0E6;
         }
 
         .header-right {
@@ -164,303 +170,252 @@
             gap: 12px;
         }
 
-        .btn-download {
-            background: var(--rapido-dark);
-            color: var(--rapido-yellow);
+        .nav-btn {
+            background: transparent;
             border: none;
-            border-radius: var(--radius-pill);
-            padding: 12px 24px;
-            display: inline-flex;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--swiggy-dark);
+            display: flex;
             align-items: center;
             gap: 8px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 700;
-            transition: all 0.2s;
-        }
-
-        .btn-download:hover {
-            background: #000;
-            transform: translateY(-1px);
-        }
-
-        /* Hero Section with Ride Booking Widget */
-        .hero {
-            background: linear-gradient(135deg, #FFFDF0 0%, var(--rapido-light) 100%);
-            padding: 50px 0 80px;
-            border-bottom: 1px solid var(--rapido-gray-100);
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 48px;
-            align-items: center;
-        }
-
-        .hero h1 {
-            font-size: 48px;
-            font-weight: 800;
-            line-height: 1.15;
-            margin-bottom: 16px;
-            letter-spacing: -0.03em;
-            color: var(--rapido-gray-900);
-        }
-
-        .hero h1 span {
-            background: var(--rapido-yellow);
-            padding: 0 8px;
-            border-radius: 6px;
-        }
-
-        .hero p {
-            color: var(--rapido-gray-500);
-            font-size: 17px;
-            margin-bottom: 32px;
-            font-weight: 500;
-        }
-
-        /* Ride Booking Card (Rapido Booking Widget) */
-        .booking-card {
-            background: var(--rapido-white);
-            border-radius: var(--radius-lg);
-            padding: 28px;
-            box-shadow: var(--shadow-hover);
-            border: 2px solid var(--rapido-yellow);
-        }
-
-        .ride-tabs {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 24px;
-        }
-
-        .ride-tab {
-            flex: 1;
-            padding: 12px 10px;
-            background: var(--rapido-light);
-            border: 1px solid var(--rapido-gray-100);
-            border-radius: 12px;
-            text-align: center;
-            font-weight: 700;
-            font-size: 13px;
-            cursor: pointer;
-            transition: all 0.2s;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .ride-tab.active, .ride-tab:hover {
-            background: var(--rapido-yellow);
-            border-color: var(--rapido-yellow);
-            color: var(--rapido-gray-900);
-        }
-
-        .ride-tab i {
-            font-size: 18px;
-        }
-
-        .location-inputs {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-            margin-bottom: 24px;
-        }
-
-        .input-group {
-            display: flex;
-            align-items: center;
-            background: var(--rapido-light);
-            border: 1px solid var(--rapido-gray-100);
-            border-radius: var(--radius-md);
-            padding: 0 16px;
-            transition: all 0.2s;
-        }
-
-        .input-group:focus-within {
-            border-color: var(--rapido-gray-900);
-            background: var(--rapido-white);
-            box-shadow: 0 0 0 3px rgba(255, 213, 0, 0.2);
-        }
-
-        .input-group i {
-            font-size: 16px;
-            margin-right: 12px;
-        }
-
-        .input-group.pickup i { color: #2E7D32; }
-        .input-group.drop i { color: #C62828; }
-
-        .input-group input {
-            border: 0;
-            background: transparent;
-            outline: none;
-            padding: 14px 0;
-            width: 100%;
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--rapido-gray-900);
-        }
-
-        .input-group input::placeholder {
-            color: var(--rapido-gray-500);
-            font-weight: 400;
-        }
-
-        .btn-book {
-            width: 100%;
-            background: var(--rapido-yellow);
-            color: var(--rapido-gray-900);
-            border: none;
-            padding: 16px;
+            padding: 8px 14px;
             border-radius: var(--radius-pill);
+            transition: background 0.2s;
+        }
+
+        .nav-btn:hover {
+            background: var(--swiggy-light);
+        }
+
+        .nav-btn-cart {
+            background: var(--swiggy-orange);
+            color: var(--swiggy-white);
+        }
+
+        .nav-btn-cart:hover {
+            background: var(--swiggy-orange-hover);
+        }
+
+        .badge-count {
+            background: var(--swiggy-dark);
+            color: var(--swiggy-white);
+            font-size: 11px;
             font-weight: 800;
-            font-size: 16px;
-            cursor: pointer;
-            transition: all 0.2s;
-            box-shadow: 0 4px 14px rgba(255, 213, 0, 0.4);
+            padding: 2px 7px;
+            border-radius: var(--radius-pill);
         }
 
-        .btn-book:hover {
-            background: var(--rapido-yellow-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 213, 0, 0.6);
+        /* Sub-Service Banner */
+        .services-bar {
+            background: var(--swiggy-light);
+            padding: 16px 0;
+            border-bottom: 1px solid var(--swiggy-gray-100);
         }
 
-        .hero-img-box {
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-hover);
-            height: 420px;
-            background: var(--rapido-dark);
-            position: relative;
+        .services-scroll {
+            display: flex;
+            gap: 16px;
+            overflow-x: auto;
+            scrollbar-width: none;
         }
 
-        .hero-img-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.85;
+        .services-scroll::-webkit-scrollbar {
+            display: none;
         }
 
-        .hero-banner-tag {
-            position: absolute;
-            bottom: 24px;
-            left: 24px;
-            right: 24px;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(8px);
-            padding: 16px 20px;
-            border-radius: var(--radius-md);
-            color: var(--rapido-white);
+        .service-pill {
+            background: var(--swiggy-white);
+            padding: 10px 20px;
+            border-radius: var(--radius-pill);
+            font-size: 14px;
+            font-weight: 700;
+            white-space: nowrap;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            gap: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            cursor: pointer;
+            transition: all 0.2s;
         }
 
-        .hero-banner-tag h4 {
-            font-size: 16px;
-            font-weight: 700;
-            color: var(--rapido-yellow);
+        .service-pill.active, .service-pill:hover {
+            background: var(--swiggy-orange);
+            color: var(--swiggy-white);
         }
 
-        .hero-banner-tag p {
-            font-size: 13px;
-            margin: 0;
-            color: #CCCCCC;
-        }
-
-        /* Section Layouts */
+        /* Main Section */
         .section {
-            padding: 64px 0;
+            padding: 48px 0;
         }
 
         .section-header {
-            margin-bottom: 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 28px;
         }
 
         .section-title h2 {
-            font-size: 30px;
+            font-size: 26px;
             font-weight: 800;
             letter-spacing: -0.02em;
-            color: var(--rapido-gray-900);
+            color: var(--swiggy-dark);
         }
 
-        .section-title p {
-            color: var(--rapido-gray-500);
-            font-size: 15px;
-            margin-top: 4px;
-        }
-
-        /* Services Grid */
-        .services-grid {
+        /* What's on your mind (Categories) */
+        .categories-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 24px;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 20px;
         }
 
-        .service-card {
-            background: var(--rapido-white);
-            border-radius: var(--radius-lg);
-            padding: 28px;
-            border: 1px solid var(--rapido-gray-100);
-            box-shadow: var(--shadow-card);
-            transition: all 0.25s ease;
+        .cat-item {
+            text-align: center;
             cursor: pointer;
+            transition: transform 0.2s;
         }
 
-        .service-card:hover {
-            border-color: var(--rapido-yellow);
-            box-shadow: var(--shadow-hover);
-            transform: translateY(-4px);
+        .cat-item:hover {
+            transform: scale(1.05);
         }
 
-        .service-icon {
-            width: 56px;
-            height: 56px;
-            background: #FFF9D6;
-            color: var(--rapido-gray-900);
-            border-radius: 14px;
+        .cat-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .cat-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cat-item h4 {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--swiggy-dark);
+        }
+
+        /* Restaurant / Food Cards Grid */
+        .restaurants-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 32px;
+        }
+
+        .restaurant-card {
+            background: var(--swiggy-white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-            margin-bottom: 20px;
+            flex-direction: column;
+            cursor: pointer;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
 
-        .service-card h3 {
+        .restaurant-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .res-img-wrapper {
+            position: relative;
+            height: 180px;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            background: var(--swiggy-light);
+        }
+
+        .restaurant-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .discount-badge {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
+            color: var(--swiggy-white);
+            padding: 16px 12px 10px;
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: -0.01em;
+        }
+
+        .res-content {
+            padding: 14px 6px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .res-name {
             font-size: 18px;
             font-weight: 700;
-            margin-bottom: 8px;
+            color: var(--swiggy-dark);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
-        .service-card p {
+        .res-meta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
             font-size: 14px;
-            color: var(--rapido-gray-500);
-            line-height: 1.5;
+            font-weight: 700;
+        }
+
+        .rating-box {
+            background: #48C479;
+            color: var(--swiggy-white);
+            padding: 2px 6px;
+            border-radius: 6px;
+            font-size: 12px;
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+        }
+
+        .res-cuisines {
+            font-size: 14px;
+            color: var(--swiggy-gray-500);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-weight: 500;
+        }
+
+        .res-location {
+            font-size: 13px;
+            color: var(--swiggy-gray-500);
+            font-weight: 500;
         }
 
         /* Footer */
         footer {
-            background: var(--rapido-dark);
-            color: var(--rapido-white);
+            background: var(--swiggy-dark);
+            color: var(--swiggy-white);
             padding: 64px 0 36px;
             margin-top: 80px;
         }
 
         .footer-brand {
-            font-size: 28px;
+            font-size: 26px;
             font-weight: 800;
-            margin-bottom: 20px;
-        }
-
-        .footer-brand span {
-            background: var(--rapido-yellow);
-            color: var(--rapido-gray-900);
-            padding: 0 8px;
-            border-radius: 6px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .footer-bottom {
@@ -468,166 +423,146 @@
             padding-top: 24px;
             margin-top: 40px;
             text-align: center;
-            color: #999999;
+            color: #93959F;
             font-size: 13px;
         }
 
         @media (max-width: 900px) {
-            .hero-grid { grid-template-columns: 1fr; }
-            .hero-img-box { display: none; }
             .location-pill { display: none; }
             nav.main-nav { display: none; }
-            .hero h1 { font-size: 36px; }
         }
     </style>
 </head>
 <body>
 
     <div class="top-bar">
-        ⚡ Fastest commute in the city • Lowest fares guaranteed! <span>Code: RAPIDO50</span>
+        🚀 Free delivery on orders above ₹199 for <strong>Nehith One</strong> members! <span>Use code: SWIGGYNEW</span>
     </div>
 
     <header>
         <div class="container header-inner">
             <a class="brand" href="#">
-                Nehitha <span class="badge-brand">Ride</span>
+                <div class="brand-logo"><i class="fas fa-utensils"></i></div>
+                Nehith <span style="color: var(--swiggy-orange);">Swiggy</span>
             </a>
 
             <div class="location-pill">
-                <i class="fas fa-map-marker-alt"></i>
-                <span>Hyderabad</span>
+                <i class="fas fa-location-dot"></i>
+                <span>Madhapur, Hyderabad</span>
                 <i class="fas fa-chevron-down" style="font-size: 10px; margin-left: 4px;"></i>
             </div>
 
             <nav class="main-nav">
                 <ul>
-                    <li><a href="#" class="active"><i class="fas fa-motorcycle"></i> Rides</a></li>
-                    <li><a href="#servicesSection"><i class="fas fa-box"></i> Parcel</a></li>
-                    <li><a href="#servicesSection"><i class="fas fa-shield-alt"></i> Safety</a></li>
+                    <li><a href="#" class="active"><i class="fas fa-briefcase"></i> Swiggy Corporate</a></li>
+                    <li><a href="#restaurantsSection"><i class="fas fa-search"></i> Search</a></li>
+                    <li><a href="#restaurantsSection"><i class="fas fa-percent"></i> Offers</a></li>
                 </ul>
             </nav>
 
             <div class="header-right">
-                <button class="btn-download" onclick="alert('Downloading Nehitha Ride App...')">
-                    <i class="fas fa-download"></i> Download App
+                <button class="nav-btn"><i class="far fa-user"></i> Sign In</button>
+                <button class="nav-btn nav-btn-cart">
+                    <i class="fas fa-shopping-bag"></i> Cart <span class="badge-count" id="cartCount">0</span>
                 </button>
             </div>
         </div>
     </header>
 
+    <div class="services-bar">
+        <div class="container services-scroll">
+            <div class="service-pill active"><i class="fas fa-burger"></i> Food Delivery</div>
+            <div class="service-pill" onclick="alert('Opening Swiggy Instamart...')"><i class="fas fa-basket-shopping"></i> Instamart (Grocery)</div>
+            <div class="service-pill" onclick="alert('Opening Swiggy Dineout...')"><i class="fas fa-champagne-glasses"></i> Dineout</div>
+            <div class="service-pill" onclick="alert('Opening Swiggy Genie...')"><i class="fas fa-box"></i> Genie (Pickup & Drop)</div>
+        </div>
+    </div>
+
     <main>
-        <section class="hero">
-            <div class="container hero-grid">
-                <div>
-                    <h1>Bharat's <span>fastest</span> & most affordable bike taxi</h1>
-                    <p>Beat the traffic, save time and money on your everyday commute with verified captains.</p>
-                    
-                    <!-- Ride Booking Widget -->
-                    <div class="booking-card">
-                        <div class="ride-tabs">
-                            <div class="ride-tab active" onclick="selectTab(this)">
-                                <i class="fas fa-motorcycle"></i> Bike
-                            </div>
-                            <div class="ride-tab" onclick="selectTab(this)">
-                                <i class="fas fa-taxi"></i> Auto
-                            </div>
-                            <div class="ride-tab" onclick="selectTab(this)">
-                                <i class="fas fa-car"></i> Cab
-                            </div>
-                            <div class="ride-tab" onclick="selectTab(this)">
-                                <i class="fas fa-box-open"></i> Parcel
-                            </div>
-                        </div>
-
-                        <div class="location-inputs">
-                            <div class="input-group pickup">
-                                <i class="fas fa-circle-dot"></i>
-                                <input type="text" id="pickupInput" placeholder="Enter pickup location">
-                            </div>
-                            <div class="input-group drop">
-                                <i class="fas fa-location-dot"></i>
-                                <input type="text" id="dropInput" placeholder="Enter drop location">
-                            </div>
-                        </div>
-
-                        <button class="btn-book" onclick="bookRide()">
-                            <i class="fas fa-search"></i> Find Captain
-                        </button>
-                    </div>
-                </div>
-
-                <div class="hero-img-box">
-                    <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=800&q=80" alt="Bike Ride">
-                    <div class="hero-banner-tag">
-                        <div>
-                            <h4>10M+ Happy Rides Daily</h4>
-                            <p>Safe helmets provided with every ride</p>
-                        </div>
-                        <i class="fas fa-helmet-safety" style="font-size: 28px; color: var(--rapido-yellow);"></i>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section container" id="servicesSection">
+        <section class="section container">
             <div class="section-header">
                 <div class="section-title">
-                    <h2>Our Services</h2>
-                    <p>Choose how you want to travel or send goods</p>
+                    <h2>What's on your mind, Nehith?</h2>
                 </div>
             </div>
+            <div class="categories-grid" id="categoriesGrid"></div>
+        </section>
 
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-motorcycle"></i></div>
-                    <h3>Bike Taxi</h3>
-                    <p>Quickest way to zip through traffic jams and reach your destination on time.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-taxi"></i></div>
-                    <h3>Auto Rides</h3>
-                    <p>Comfortable doorstep auto pickups at transparent meter-backed fares.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-box"></i></div>
-                    <h3>Parcel Delivery</h3>
-                    <p>Send food, documents, gifts or packages securely across town within minutes.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-shield-halved"></i></div>
-                    <h3>Safety Assurance</h3>
-                    <p>INR 5L accidental insurance cover & live ride tracking for complete peace of mind.</p>
+        <section class="section container" id="restaurantsSection">
+            <div class="section-header">
+                <div class="section-title">
+                    <h2>Top restaurant chains in Hyderabad</h2>
                 </div>
             </div>
+            <div class="restaurants-grid" id="restaurantsGrid"></div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <div class="footer-brand">Nehitha <span>Ride</span></div>
-            <p style="color: #aaa; font-size: 14px; max-width: 400px;">Making everyday urban commuting lightning fast, safe, and affordable for everyone.</p>
+            <div class="footer-brand">
+                <div class="brand-logo" style="width: 32px; height: 32px; font-size: 16px;"><i class="fas fa-utensils"></i></div>
+                Nehith Swiggy
+            </div>
+            <p style="color: #93959F; font-size: 14px; max-width: 400px;">Experience lightning-fast food delivery from top-rated neighborhood restaurants right to your doorstep.</p>
             <div class="footer-bottom">
-                <p>&copy; 2026 Nehitha Ride Inc. Inspired by Rapido UI Aesthetics.</p>
+                <p>&copy; 2026 Nehith Swiggy Technologies Pvt. Ltd. Designed with Swiggy UI Aesthetics.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        function selectTab(element) {
-            document.querySelectorAll('.ride-tab').forEach(t => t.classList.remove('active'));
-            element.classList.add('active');
-        }
+        const categories = [
+            { name: "Biryani", img: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=300&q=80" },
+            { name: "Burgers", img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=300&q=80" },
+            { name: "Pizzas", img: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=300&q=80" },
+            { name: "Chinese", img: "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=300&q=80" },
+            { name: "Desserts", img: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=300&q=80" },
+            { name: "South Indian", img: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=300&q=80" }
+        ];
 
-        function bookRide() {
-            const pickup = document.getElementById('pickupInput').value.trim();
-            const drop = document.getElementById('dropInput').value.trim();
+        const restaurants = [
+            { id: 1, name: "Paradise Biryani", offer: "ITEMS AT ₹149", rating: "4.3", time: "25-30 mins", cuisines: "Biryani, North Indian, Kebabs", location: "Hitech City", img: "https://images.unsplash.com/photo-1633964913295-ceb43826e7c9?auto=format&fit=crop&w=500&q=80" },
+            { id: 2, name: "McDonald's Gourmet", offer: "FLAT ₹100 OFF", rating: "4.5", time: "20-25 mins", cuisines: "Burgers, Beverages, Fast Food", location: "Jubilee Hills", img: "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=500&q=80" },
+            { id: 3, name: "Pizza Hut", offer: "BUY 1 GET 1 FREE", rating: "4.2", time: "30-35 mins", cuisines: "Pizzas, Fast Food, Desserts", location: "Gachibowli", img: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=500&q=80" },
+            { id: 4, name: "Beijing Bites", offer: "60% OFF UPTO ₹120", rating: "4.4", time: "25-30 mins", cuisines: "Chinese, Asian, Tibetan", location: "Madhapur", img: "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=500&q=80" }
+        ];
 
-            if (!pickup || !drop) {
-                alert('Please enter both pickup and drop locations to find a captain.');
-                return;
-            }
+        // Render Categories
+        document.getElementById('categoriesGrid').innerHTML = categories.map(c => `
+            <div class="cat-item" onclick="alert('Exploring ${c.name}...')">
+                <div class="cat-img">
+                    <img src="${c.img}" alt="${c.name}">
+                </div>
+                <h4>${c.name}</h4>
+            </div>
+        `).join('');
 
-            alert(`Searching for nearby captains from "${pickup}" to "${drop}"...`);
+        // Render Restaurants
+        document.getElementById('restaurantsGrid').innerHTML = restaurants.map(r => `
+            <div class="restaurant-card" onclick="addToCart('${r.name}')">
+                <div class="res-img-wrapper">
+                    <img src="${r.img}" alt="${r.name}">
+                    <div class="discount-badge">${r.offer}</div>
+                </div>
+                <div class="res-content">
+                    <div class="res-name">${r.name}</div>
+                    <div class="res-meta">
+                        <span class="rating-box"><i class="fas fa-star" style="font-size: 10px;"></i> ${r.rating}</span>
+                        <span>•</span>
+                        <span>${r.time}</span>
+                    </div>
+                    <div class="res-cuisines">${r.cuisines}</div>
+                    <div class="res-location">${r.location}</div>
+                </div>
+            </div>
+        `).join('');
+
+        let cartCount = 0;
+        function addToCart(restaurantName) {
+            cartCount++;
+            document.getElementById('cartCount').innerText = cartCount;
+            alert(`Added a delicious item from ${restaurantName} to your Swiggy cart!`);
         }
     </script>
 </body>
