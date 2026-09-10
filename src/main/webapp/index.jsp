@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Nehitha Eats — Food & Grocery Delivery</title>
+    <title>Nehitha Eats — Gourmet & Food Delivery</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,21 +12,20 @@
 
     <style>
         :root {
-            --uber-black: #000000;
-            --uber-dark: #141414;
-            --uber-green: #06C167;
-            --uber-green-hover: #04A254;
-            --uber-white: #ffffff;
-            --uber-gray-50: #f6f6f6;
-            --uber-gray-100: #e8e8e8;
-            --uber-gray-200: #cccccc;
-            --uber-gray-600: #757575;
-            --uber-gray-900: #1d1d1d;
-            --radius-pill: 500px;
-            --radius-lg: 12px;
-            --radius-md: 8px;
-            --shadow-subtle: 0 4px 16px rgba(0, 0, 0, 0.06);
-            --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.12);
+            --gourmet-primary: #FF385C;
+            --gourmet-primary-hover: #E00B3D;
+            --gourmet-dark: #1F1F1F;
+            --gourmet-light: #FAFAFA;
+            --gourmet-cream: #F4F1EA;
+            --gourmet-white: #FFFFFF;
+            --gourmet-gray-100: #EFEFEF;
+            --gourmet-gray-500: #717171;
+            --gourmet-gray-900: #222222;
+            --radius-pill: 9999px;
+            --radius-lg: 16px;
+            --radius-md: 10px;
+            --shadow-card: 0 6px 20px rgba(0, 0, 0, 0.05);
+            --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.1);
             --container: 1280px;
         }
 
@@ -39,10 +38,10 @@
 
         body {
             font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-            color: var(--uber-dark);
-            background: var(--uber-white);
+            color: var(--gourmet-gray-900);
+            background: var(--gourmet-light);
             -webkit-font-smoothing: antialiased;
-            line-height: 1.5;
+            line-height: 1.6;
             overflow-x: hidden;
         }
 
@@ -62,27 +61,23 @@
             padding: 0 24px;
         }
 
-        /* Top Bar */
+        /* Top Announcement Bar */
         .top-bar {
-            background: var(--uber-black);
-            color: var(--uber-white);
+            background: linear-gradient(135deg, #FF385C, #FF6B4A);
+            color: var(--gourmet-white);
             text-align: center;
             padding: 10px 16px;
             font-size: 13px;
-            font-weight: 500;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-weight: 600;
+            letter-spacing: -0.01em;
         }
 
         .top-bar span {
-            background: var(--uber-green);
-            color: var(--uber-white);
-            padding: 3px 10px;
+            background: rgba(255, 255, 255, 0.25);
+            padding: 2px 10px;
             border-radius: var(--radius-pill);
-            margin-left: 8px;
-            font-size: 11px;
+            margin-left: 6px;
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
         /* Header */
@@ -90,106 +85,100 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            background: var(--uber-white);
-            border-bottom: 1px solid var(--uber-gray-100);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--gourmet-gray-100);
         }
 
         .header-inner {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 20px;
-            height: 72px;
+            gap: 24px;
+            height: 80px;
         }
 
         .brand {
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 4px;
             font-weight: 800;
             font-size: 26px;
-            letter-spacing: -0.03em;
-            color: var(--uber-black);
+            letter-spacing: -0.04em;
+            color: var(--gourmet-gray-900);
         }
 
         .brand .accent {
-            color: var(--uber-green);
-            font-weight: 600;
+            color: var(--gourmet-primary);
         }
 
-        /* Location Picker Pill */
+        /* Location Picker */
         .location-pill {
             display: flex;
             align-items: center;
-            gap: 10px;
-            background: var(--uber-gray-50);
-            padding: 10px 16px;
+            gap: 8px;
+            background: var(--gourmet-cream);
+            padding: 10px 18px;
             border-radius: var(--radius-pill);
             font-size: 14px;
             font-weight: 600;
             cursor: pointer;
-            transition: background 0.2s;
-            border: 1px solid transparent;
+            transition: all 0.2s;
+            border: 1px solid rgba(0,0,0,0.04);
         }
 
         .location-pill:hover {
-            background: var(--uber-gray-100);
+            background: #EBE6DC;
         }
 
-        /* Uber Search Bar */
+        .location-pill i {
+            color: var(--gourmet-primary);
+        }
+
+        /* Search Bar */
         .search-box {
             position: relative;
             display: flex;
             align-items: center;
-            background: var(--uber-gray-50);
+            background: var(--gourmet-cream);
             border-radius: var(--radius-pill);
             flex: 1;
-            max-width: 480px;
-            padding: 0 16px;
+            max-width: 440px;
+            padding: 0 18px;
             transition: all 0.2s ease;
             border: 1px solid transparent;
         }
 
         .search-box:focus-within {
-            background: var(--uber-white);
-            border-color: var(--uber-black);
-            box-shadow: 0 0 0 2px var(--uber-black);
+            background: var(--gourmet-white);
+            border-color: var(--gourmet-primary);
+            box-shadow: 0 0 0 3px rgba(255, 56, 92, 0.15);
         }
 
         .search-box i.fa-search {
-            color: var(--uber-dark);
-            font-size: 15px;
+            color: var(--gourmet-gray-500);
+            font-size: 14px;
         }
 
         .search-box input {
             border: 0;
             background: transparent;
             outline: none;
-            padding: 12px 12px;
+            padding: 12px 10px;
             width: 100%;
             font-size: 14px;
-            color: var(--uber-black);
+            color: var(--gourmet-gray-900);
             font-weight: 500;
         }
 
         .search-box input::placeholder {
-            color: var(--uber-gray-600);
+            color: var(--gourmet-gray-500);
         }
 
-        .search-box button {
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            color: var(--uber-black);
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-        }
-
-        /* Navigation Links */
+        /* Nav */
         nav.main-nav ul {
             display: flex;
-            gap: 4px;
+            gap: 6px;
             list-style: none;
         }
 
@@ -197,17 +186,17 @@
             display: flex;
             gap: 8px;
             align-items: center;
-            padding: 10px 16px;
+            padding: 10px 18px;
             border-radius: var(--radius-pill);
-            color: var(--uber-dark);
+            color: var(--gourmet-gray-900);
             font-weight: 600;
             font-size: 14px;
             transition: all 0.2s;
         }
 
         nav.main-nav li a:hover, nav.main-nav li a.active {
-            background: var(--uber-black);
-            color: var(--uber-white);
+            background: var(--gourmet-dark);
+            color: var(--gourmet-white);
         }
 
         .header-right {
@@ -217,8 +206,8 @@
         }
 
         .icon-btn {
-            background: var(--uber-gray-50);
-            color: var(--uber-black);
+            background: var(--gourmet-cream);
+            color: var(--gourmet-gray-900);
             border: none;
             border-radius: var(--radius-pill);
             padding: 10px 16px;
@@ -229,25 +218,25 @@
             font-size: 14px;
             font-weight: 600;
             position: relative;
-            transition: background 0.2s;
+            transition: all 0.2s;
         }
 
         .icon-btn:hover {
-            background: var(--uber-gray-100);
+            background: #EBE6DC;
         }
 
         .icon-btn-cart {
-            background: var(--uber-black);
-            color: var(--uber-white);
+            background: var(--gourmet-primary);
+            color: var(--gourmet-white);
         }
 
         .icon-btn-cart:hover {
-            background: #333333;
+            background: var(--gourmet-primary-hover);
         }
 
         .badge-count {
-            background: var(--uber-green);
-            color: var(--uber-white);
+            background: var(--gourmet-dark);
+            color: var(--gourmet-white);
             font-size: 11px;
             font-weight: 800;
             padding: 2px 7px;
@@ -256,14 +245,14 @@
 
         /* Hero Section */
         .hero {
-            background: var(--uber-gray-50);
-            padding: 56px 0;
-            border-bottom: 1px solid var(--uber-gray-100);
+            background: linear-gradient(to bottom, var(--gourmet-cream), var(--gourmet-light));
+            padding: 64px 0 80px;
+            border-bottom: 1px solid var(--gourmet-gray-100);
         }
 
         .hero-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1.1fr 0.9fr;
             gap: 48px;
             align-items: center;
         }
@@ -272,34 +261,35 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 6px 12px;
-            background: var(--uber-white);
+            padding: 8px 16px;
+            background: var(--gourmet-white);
             border-radius: var(--radius-pill);
-            color: var(--uber-black);
+            color: var(--gourmet-gray-900);
             font-size: 13px;
             font-weight: 700;
-            margin-bottom: 20px;
-            box-shadow: var(--shadow-subtle);
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-card);
+            border: 1px solid rgba(0,0,0,0.03);
         }
 
         .hero-badge i {
-            color: var(--uber-green);
+            color: var(--gourmet-primary);
         }
 
         .hero h1 {
-            font-size: 52px;
+            font-size: 56px;
             font-weight: 800;
-            line-height: 1.08;
-            margin-bottom: 16px;
+            line-height: 1.1;
+            margin-bottom: 20px;
             letter-spacing: -0.03em;
-            color: var(--uber-black);
+            color: var(--gourmet-gray-900);
         }
 
         .hero p {
-            color: var(--uber-gray-600);
+            color: var(--gourmet-gray-500);
             font-size: 18px;
-            margin-bottom: 32px;
-            max-width: 480px;
+            margin-bottom: 36px;
+            max-width: 500px;
             font-weight: 400;
         }
 
@@ -307,35 +297,37 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-            padding: 14px 28px;
+            gap: 10px;
+            padding: 16px 32px;
             border-radius: var(--radius-pill);
             font-weight: 700;
             font-size: 15px;
             cursor: pointer;
             border: 0;
-            transition: all 0.2s;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .btn-primary {
-            background: var(--uber-black);
-            color: var(--uber-white);
+            background: var(--gourmet-primary);
+            color: var(--gourmet-white);
+            box-shadow: 0 4px 14px rgba(255, 56, 92, 0.35);
         }
 
         .btn-primary:hover {
-            background: #2a2a2a;
-            transform: translateY(-1px);
+            background: var(--gourmet-primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 56, 92, 0.45);
         }
 
         .btn-secondary {
-            background: var(--uber-white);
-            border: 1px solid var(--uber-gray-200);
-            color: var(--uber-black);
+            background: var(--gourmet-white);
+            border: 1px solid #D1CCD2;
+            color: var(--gourmet-gray-900);
         }
 
         .btn-secondary:hover {
-            background: var(--uber-gray-50);
-            border-color: var(--uber-black);
+            background: var(--gourmet-cream);
+            border-color: var(--gourmet-gray-900);
         }
 
         .hero-card {
@@ -343,7 +335,8 @@
             overflow: hidden;
             box-shadow: var(--shadow-hover);
             position: relative;
-            height: 380px;
+            height: 400px;
+            border: 4px solid var(--gourmet-white);
         }
 
         .hero-card img {
@@ -355,25 +348,25 @@
 
         /* Section Layouts */
         .section {
-            padding: 56px 0;
+            padding: 64px 0;
         }
 
         .section-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
-            margin-bottom: 28px;
+            margin-bottom: 32px;
         }
 
         .section-title h2 {
             font-size: 32px;
             font-weight: 800;
             letter-spacing: -0.02em;
-            color: var(--uber-black);
+            color: var(--gourmet-gray-900);
         }
 
         .section-title p {
-            color: var(--uber-gray-600);
+            color: var(--gourmet-gray-500);
             font-size: 15px;
             margin-top: 4px;
         }
@@ -381,125 +374,132 @@
         /* Filter Pills */
         .filter-pills {
             display: flex;
-            gap: 8px;
+            gap: 10px;
         }
 
         .pill {
-            background: var(--uber-gray-50);
-            border: 1px solid transparent;
-            color: var(--uber-black);
+            background: var(--gourmet-white);
+            border: 1px solid var(--gourmet-gray-100);
+            color: var(--gourmet-gray-900);
             padding: 10px 20px;
             border-radius: var(--radius-pill);
             font-size: 14px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.2s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
         }
 
         .pill.active, .pill:hover {
-            background: var(--uber-black);
-            color: var(--uber-white);
+            background: var(--gourmet-dark);
+            color: var(--gourmet-white);
+            border-color: var(--gourmet-dark);
         }
 
         /* Category Grid */
         .categories-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-            gap: 16px;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
         }
 
         .cat-card {
-            background: var(--uber-gray-50);
+            background: var(--gourmet-white);
             border-radius: var(--radius-lg);
-            padding: 24px 16px;
+            padding: 28px 20px;
             text-align: center;
             cursor: pointer;
-            transition: all 0.2s ease;
-            border: 2px solid transparent;
+            transition: all 0.25s ease;
+            border: 1px solid var(--gourmet-gray-100);
+            box-shadow: var(--shadow-card);
         }
 
         .cat-card:hover {
-            background: var(--uber-white);
-            border-color: var(--uber-black);
-            box-shadow: var(--shadow-subtle);
-            transform: translateY(-2px);
+            border-color: var(--gourmet-primary);
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-4px);
         }
 
         .cat-icon {
-            width: 56px;
-            height: 56px;
-            background: var(--uber-white);
+            width: 64px;
+            height: 64px;
+            background: var(--gourmet-cream);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 22px;
-            color: var(--uber-black);
-            margin: 0 auto 12px;
-            box-shadow: var(--shadow-subtle);
+            font-size: 24px;
+            color: var(--gourmet-primary);
+            margin: 0 auto 16px;
             transition: all 0.2s;
         }
 
         .cat-card:hover .cat-icon {
-            background: var(--uber-green);
-            color: var(--uber-white);
+            background: var(--gourmet-primary);
+            color: var(--gourmet-white);
         }
 
         .cat-card h4 {
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 700;
-            color: var(--uber-black);
+            color: var(--gourmet-gray-900);
         }
 
-        /* Uber Eats Style Product Grid */
+        /* Product Grid */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 28px;
+            gap: 32px;
         }
 
         .product-card {
-            background: var(--uber-white);
+            background: var(--gourmet-white);
             border-radius: var(--radius-lg);
             overflow: hidden;
             display: flex;
             flex-direction: column;
             cursor: pointer;
-            transition: all 0.2s ease;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid var(--gourmet-gray-100);
+            box-shadow: var(--shadow-card);
+            padding: 12px;
         }
 
         .product-card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-hover);
+            border-color: rgba(0,0,0,0.08);
         }
 
         .product-img-wrapper {
             position: relative;
-            height: 200px;
-            border-radius: var(--radius-lg);
+            height: 210px;
+            border-radius: 12px;
             overflow: hidden;
-            background: var(--uber-gray-100);
+            background: var(--gourmet-cream);
         }
 
         .product-card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.3s ease;
+            transition: transform 0.4s ease;
         }
 
         .product-card:hover img {
-            transform: scale(1.04);
+            transform: scale(1.06);
         }
 
         .service-badge {
             position: absolute;
             top: 12px;
             left: 12px;
-            background: var(--uber-black);
-            color: var(--uber-white);
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(4px);
+            color: var(--gourmet-white);
             font-size: 11px;
             font-weight: 700;
-            padding: 4px 10px;
+            padding: 5px 12px;
             border-radius: var(--radius-pill);
             letter-spacing: 0.3px;
             z-index: 2;
@@ -509,28 +509,29 @@
             position: absolute;
             top: 12px;
             right: 12px;
-            background: var(--uber-white);
-            width: 36px;
-            height: 36px;
+            background: var(--gourmet-white);
+            width: 38px;
+            height: 38px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 16px;
-            color: var(--uber-black);
-            box-shadow: var(--shadow-subtle);
+            color: var(--gourmet-gray-900);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             border: none;
             cursor: pointer;
             z-index: 2;
-            transition: transform 0.2s;
+            transition: transform 0.2s, color 0.2s;
         }
 
         .favorite-btn:hover {
             transform: scale(1.1);
+            color: var(--gourmet-primary);
         }
 
         .product-content {
-            padding: 14px 4px 0;
+            padding: 16px 8px 4px;
             display: flex;
             flex-direction: column;
             flex: 1;
@@ -540,23 +541,23 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            gap: 8px;
-            margin-bottom: 4px;
+            gap: 10px;
+            margin-bottom: 6px;
         }
 
         .product-title {
             font-size: 17px;
             font-weight: 700;
-            color: var(--uber-black);
-            line-height: 1.3;
+            color: var(--gourmet-gray-900);
+            line-height: 1.35;
         }
 
         .product-rating {
-            background: var(--uber-gray-50);
-            color: var(--uber-black);
+            background: #FFF0F2;
+            color: var(--gourmet-primary);
             font-size: 12px;
-            font-weight: 700;
-            padding: 2px 8px;
+            font-weight: 800;
+            padding: 4px 10px;
             border-radius: var(--radius-pill);
             display: inline-flex;
             align-items: center;
@@ -565,10 +566,10 @@
         }
 
         .product-meta {
-            color: var(--uber-gray-600);
+            color: var(--gourmet-gray-500);
             font-size: 13px;
             font-weight: 500;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
         }
 
         .product-bottom {
@@ -576,20 +577,21 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding-top: 8px;
+            padding-top: 12px;
+            border-top: 1px solid var(--gourmet-gray-100);
         }
 
         .current-price {
-            font-size: 18px;
+            font-size: 19px;
             font-weight: 800;
-            color: var(--uber-black);
+            color: var(--gourmet-gray-900);
         }
 
         .add-cart-btn {
-            background: var(--uber-black);
-            color: var(--uber-white);
+            background: var(--gourmet-cream);
+            color: var(--gourmet-gray-900);
             border: none;
-            padding: 8px 18px;
+            padding: 10px 20px;
             border-radius: var(--radius-pill);
             font-weight: 700;
             font-size: 13px;
@@ -601,32 +603,34 @@
         }
 
         .add-cart-btn:hover {
-            background: var(--uber-green);
+            background: var(--gourmet-primary);
+            color: var(--gourmet-white);
         }
 
         /* Footer */
         footer {
-            background: var(--uber-black);
-            color: var(--uber-white);
-            padding: 60px 0 40px;
-            margin-top: 80px;
+            background: var(--gourmet-dark);
+            color: var(--gourmet-white);
+            padding: 72px 0 48px;
+            margin-top: 100px;
         }
 
         .footer-brand {
-            font-size: 28px;
+            font-size: 30px;
             font-weight: 800;
             margin-bottom: 24px;
+            letter-spacing: -0.03em;
         }
 
         .footer-brand span {
-            color: var(--uber-green);
+            color: var(--gourmet-primary);
         }
 
         .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 24px;
+            padding-top: 32px;
             text-align: center;
-            color: var(--uber-gray-200);
+            color: #999999;
             font-size: 13px;
         }
 
@@ -635,6 +639,7 @@
             .hero-card { display: none; }
             .location-pill { display: none; }
             nav.main-nav { display: none; }
+            .hero h1 { font-size: 40px; }
         }
     </style>
 </head>
@@ -642,7 +647,7 @@
 <body>
 
     <div class="top-bar">
-        ⚡ Order with <strong>Nehitha Pass</strong> for $0 Delivery Fee & 5% off <span>Uber Eats Style</span>
+        ✨ Free delivery on your first gourmet order with <strong>Nehitha Pass</strong> <span>Use code: TASTY2026</span>
     </div>
 
     <header>
@@ -653,13 +658,13 @@
 
             <div class="location-pill">
                 <i class="fas fa-map-marker-alt"></i>
-                <span>Deliver now • San Francisco</span>
-                <i class="fas fa-chevron-down" style="font-size: 11px;"></i>
+                <span>Deliver to • San Francisco</span>
+                <i class="fas fa-chevron-down" style="font-size: 10px; margin-left: 4px;"></i>
             </div>
 
             <div class="search-box">
                 <i class="fas fa-search"></i>
-                <input type="search" id="searchInput" placeholder="Search food, groceries, drinks..." aria-label="Search">
+                <input type="search" id="searchInput" placeholder="Search curated dishes, bakeries, cafes..." aria-label="Search">
             </div>
 
             <nav class="main-nav">
@@ -688,18 +693,18 @@
             <div class="container hero-grid">
                 <div>
                     <div class="hero-badge">
-                        <i class="fas fa-bolt"></i> Fast 25-min delivery
+                        <i class="fas fa-award"></i> Handcrafted & Curated Daily
                     </div>
-                    <h1>Order food you love, delivered fast</h1>
-                    <p>Order from your favorite local restaurants and top gourmet chefs in just a few taps.</p>
-                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                        <a href="#productsSection" class="btn btn-primary"><i class="fas fa-utensils"></i> Find Food</a>
-                        <a href="#categoriesSection" class="btn btn-secondary">Explore Categories</a>
+                    <h1>Exceptional food, delivered to your door</h1>
+                    <p>Savor culinary masterpieces crafted by top local artisans, delivered fresh and hot in minutes.</p>
+                    <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+                        <a href="#productsSection" class="btn btn-primary"><i class="fas fa-utensils"></i> Order Now</a>
+                        <a href="#categoriesSection" class="btn btn-secondary">Explore Menu</a>
                     </div>
                 </div>
 
                 <div class="hero-card">
-                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80" alt="Uber Eats Gourmet Burger">
+                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80" alt="Gourmet Burger">
                 </div>
             </div>
         </section>
@@ -708,7 +713,7 @@
             <div class="section-header">
                 <div class="section-title">
                     <h2>Explore Categories</h2>
-                    <p>Browse top cuisines around you</p>
+                    <p>Discover dishes tailored to your cravings</p>
                 </div>
             </div>
             <div class="categories-grid" id="categoriesGrid"></div>
@@ -717,8 +722,8 @@
         <section class="section container" id="productsSection">
             <div class="section-header">
                 <div class="section-title">
-                    <h2>Popular Near You</h2>
-                    <p>Top dishes with high ratings and fast delivery</p>
+                    <h2>Curated Specials Near You</h2>
+                    <p>Top-rated culinary selections ready for fast delivery</p>
                 </div>
                 <div class="filter-pills">
                     <button class="pill active">All</button>
@@ -735,7 +740,7 @@
         <div class="container">
             <div class="footer-brand">Nehitha<span>Eats</span></div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Nehitha Eats, Inc. Powered by Uber design system architecture.</p>
+                <p>&copy; 2026 Nehitha Eats, Inc. Designed with Warm Gourmet Aesthetics.</p>
             </div>
         </div>
     </footer>
@@ -750,10 +755,10 @@
         ];
 
         const products = [
-            { id: 1, title: "Artisan Pepperoni Supreme Pizza", price: "$18.99", time: "25-30 min", rating: "4.9 ★", img: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=500&q=80" },
-            { id: 2, title: "Double Loaded Cheeseburger Meal", price: "$14.50", time: "15-20 min", rating: "4.7 ★", img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80" },
-            { id: 3, title: "Hyderabadi Chicken Dum Biryani", price: "$16.00", time: "20-25 min", rating: "4.9 ★", img: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=500&q=80" },
-            { id: 4, title: "Fresh Salmon & Avocado Sushi Roll", price: "$22.00", time: "30-35 min", rating: "5.0 ★", img: "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=500&q=80" }
+            { id: 1, title: "Artisan Pepperoni Supreme Pizza", price: "$18.99", time: "25-30 min", rating: "4.9", img: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=500&q=80" },
+            { id: 2, title: "Double Loaded Cheeseburger Meal", price: "$14.50", time: "15-20 min", rating: "4.7", img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80" },
+            { id: 3, title: "Hyderabadi Chicken Dum Biryani", price: "$16.00", time: "20-25 min", rating: "4.9", img: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=500&q=80" },
+            { id: 4, title: "Fresh Salmon & Avocado Sushi Roll", price: "$22.00", time: "30-35 min", rating: "5.0", img: "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=500&q=80" }
         ];
 
         // Render Categories
@@ -766,20 +771,20 @@
             </div>
         `).join('');
 
-        // Render Food Items in Uber Eats Layout
+        // Render Food Items
         document.getElementById('productsGrid').innerHTML = products.map(p => `
             <div class="product-card">
                 <div class="product-img-wrapper">
-                    <span class="service-badge">Uber Select</span>
+                    <span class="service-badge">Chef's Choice</span>
                     <button class="favorite-btn" aria-label="Favorite"><i class="far fa-heart"></i></button>
                     <img src="${p.img}" alt="${p.title}">
                 </div>
                 <div class="product-content">
                     <div class="product-header-row">
                         <div class="product-title">${p.title}</div>
-                        <div class="product-rating">${p.rating}</div>
+                        <div class="product-rating"><i class="fas fa-star" style="font-size: 10px;"></i> ${p.rating}</div>
                     </div>
-                    <div class="product-meta">${p.time} • $0.99 Delivery Fee</div>
+                    <div class="product-meta">${p.time} • $0 Delivery Fee</div>
                     <div class="product-bottom">
                         <span class="current-price">${p.price}</span>
                         <button class="add-cart-btn" onclick="addToCart()"><i class="fas fa-plus"></i> Add</button>
